@@ -46,22 +46,28 @@ namespace GAMA
             // mainlbl1
             // 
             this.mainlbl1.AutoSize = true;
+            this.mainlbl1.ColumnIndex = 0;
             this.mainlbl1.Font = new System.Drawing.Font("B Nazanin", 13F);
             this.mainlbl1.ForeColor = System.Drawing.Color.Black;
             this.mainlbl1.Location = new System.Drawing.Point(224, 3);
             this.mainlbl1.Name = "mainlbl1";
+            this.mainlbl1.PareName = null;
             this.mainlbl1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.mainlbl1.RowIndex = 0;
             this.mainlbl1.Size = new System.Drawing.Size(161, 32);
             this.mainlbl1.TabIndex = 1;
             this.mainlbl1.Text = "فیلتر بر اساس خوشه :";
             // 
             // mainCombo1
             // 
+            this.mainCombo1.ColumnIndex = 0;
             this.mainCombo1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.mainCombo1.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.mainCombo1.FormattingEnabled = true;
             this.mainCombo1.Location = new System.Drawing.Point(3, 3);
             this.mainCombo1.Name = "mainCombo1";
+            this.mainCombo1.PareName = null;
+            this.mainCombo1.RowIndex = 0;
             this.mainCombo1.Size = new System.Drawing.Size(189, 37);
             this.mainCombo1.TabIndex = 2;
             this.mainCombo1.SelectedIndexChanged += new System.EventHandler(this.MainCombo1_SelectedIndexChanged);
@@ -75,17 +81,25 @@ namespace GAMA
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(691, 338);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.DataGridView1_DataSourceChanged);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
             // 
             // btnDetails
             // 
+            this.btnDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnDetails.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDetails.BackgroundImage")));
             this.btnDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDetails.ColumnIndex = 0;
+            this.btnDetails.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetails.FlatAppearance.BorderSize = 0;
             this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetails.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnDetails.ForeColor = System.Drawing.Color.White;
+            this.btnDetails.IsClicked = false;
             this.btnDetails.Location = new System.Drawing.Point(186, 484);
             this.btnDetails.Name = "btnDetails";
+            this.btnDetails.PareName = null;
+            this.btnDetails.RowIndex = 0;
             this.btnDetails.Size = new System.Drawing.Size(95, 37);
             this.btnDetails.TabIndex = 9;
             this.btnDetails.Text = "جزِییات";
@@ -94,14 +108,20 @@ namespace GAMA
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.ColumnIndex = 0;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.IsClicked = false;
             this.btnDelete.Location = new System.Drawing.Point(287, 484);
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.PareName = null;
+            this.btnDelete.RowIndex = 0;
             this.btnDelete.Size = new System.Drawing.Size(95, 37);
             this.btnDelete.TabIndex = 8;
             this.btnDelete.Text = "حذف";
@@ -110,14 +130,20 @@ namespace GAMA
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.ColumnIndex = 0;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.IsClicked = false;
             this.btnAdd.Location = new System.Drawing.Point(388, 484);
             this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PareName = null;
+            this.btnAdd.RowIndex = 0;
             this.btnAdd.Size = new System.Drawing.Size(95, 37);
             this.btnAdd.TabIndex = 7;
             this.btnAdd.Text = "ثبت";
@@ -126,14 +152,20 @@ namespace GAMA
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.ColumnIndex = 0;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.IsClicked = false;
             this.btnEdit.Location = new System.Drawing.Point(489, 484);
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.PareName = null;
+            this.btnEdit.RowIndex = 0;
             this.btnEdit.Size = new System.Drawing.Size(95, 37);
             this.btnEdit.TabIndex = 6;
             this.btnEdit.Text = "ویرایش";
@@ -151,14 +183,20 @@ namespace GAMA
             // 
             // btnAddCourse
             // 
+            this.btnAddCourse.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnAddCourse.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddCourse.BackgroundImage")));
             this.btnAddCourse.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddCourse.ColumnIndex = 0;
+            this.btnAddCourse.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddCourse.FlatAppearance.BorderSize = 0;
             this.btnAddCourse.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddCourse.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnAddCourse.ForeColor = System.Drawing.Color.White;
+            this.btnAddCourse.IsClicked = false;
             this.btnAddCourse.Location = new System.Drawing.Point(85, 484);
             this.btnAddCourse.Name = "btnAddCourse";
+            this.btnAddCourse.PareName = null;
+            this.btnAddCourse.RowIndex = 0;
             this.btnAddCourse.Size = new System.Drawing.Size(95, 37);
             this.btnAddCourse.TabIndex = 11;
             this.btnAddCourse.Text = "ثبت دوره";

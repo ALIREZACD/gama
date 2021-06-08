@@ -112,6 +112,8 @@ namespace GAMA
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(691, 338);
             this.dataGridView1.TabIndex = 10;
+            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.DataGridView1_DataSourceChanged);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
             // 
             // FrmSabtNamCourse
             // 

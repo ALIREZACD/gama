@@ -171,7 +171,7 @@ namespace GAMA
             txtKarvarziHour.Text = Convert.ToString(FrmStandard.selected_row.Cells["ساعت کارورزی"].Value);
             txtProjectHour.Text = Convert.ToString(FrmStandard.selected_row.Cells["ساعت پروژه"].Value);
 
-            id = SqlServerClass.Select(TableNames.Course, "Id", string.Format("courseName = N'{0}'", txtName.Text));
+            id = Convert.ToString(FrmStandard.selected_row.Cells["id"].Value);
         }
         private void FindGroup()
         {

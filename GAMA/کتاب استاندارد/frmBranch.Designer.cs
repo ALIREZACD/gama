@@ -48,17 +48,25 @@ namespace GAMA
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(623, 307);
             this.dataGridView1.TabIndex = 1;
+            this.dataGridView1.DataSourceChanged += new System.EventHandler(this.DataGridView1_DataSourceChanged);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.DataGridView1_SelectionChanged);
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnDelete.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDelete.BackgroundImage")));
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDelete.ColumnIndex = 0;
+            this.btnDelete.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDelete.FlatAppearance.BorderSize = 0;
             this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDelete.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.IsClicked = false;
             this.btnDelete.Location = new System.Drawing.Point(294, 413);
             this.btnDelete.Name = "btnDelete";
+            this.btnDelete.PareName = null;
+            this.btnDelete.RowIndex = 0;
             this.btnDelete.Size = new System.Drawing.Size(95, 37);
             this.btnDelete.TabIndex = 4;
             this.btnDelete.Text = "حذف";
@@ -67,14 +75,20 @@ namespace GAMA
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAdd.ColumnIndex = 0;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.IsClicked = false;
             this.btnAdd.Location = new System.Drawing.Point(395, 413);
             this.btnAdd.Name = "btnAdd";
+            this.btnAdd.PareName = null;
+            this.btnAdd.RowIndex = 0;
             this.btnAdd.Size = new System.Drawing.Size(95, 37);
             this.btnAdd.TabIndex = 3;
             this.btnAdd.Text = "ثبت";
@@ -83,14 +97,20 @@ namespace GAMA
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnEdit.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnEdit.BackgroundImage")));
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnEdit.ColumnIndex = 0;
+            this.btnEdit.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEdit.FlatAppearance.BorderSize = 0;
             this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEdit.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnEdit.ForeColor = System.Drawing.Color.White;
+            this.btnEdit.IsClicked = false;
             this.btnEdit.Location = new System.Drawing.Point(496, 413);
             this.btnEdit.Name = "btnEdit";
+            this.btnEdit.PareName = null;
+            this.btnEdit.RowIndex = 0;
             this.btnEdit.Size = new System.Drawing.Size(95, 37);
             this.btnEdit.TabIndex = 2;
             this.btnEdit.Text = "ویرایش";
@@ -99,14 +119,20 @@ namespace GAMA
             // 
             // btnDetails
             // 
+            this.btnDetails.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnDetails.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDetails.BackgroundImage")));
             this.btnDetails.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDetails.ColumnIndex = 0;
+            this.btnDetails.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDetails.FlatAppearance.BorderSize = 0;
             this.btnDetails.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDetails.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnDetails.ForeColor = System.Drawing.Color.White;
+            this.btnDetails.IsClicked = false;
             this.btnDetails.Location = new System.Drawing.Point(193, 413);
             this.btnDetails.Name = "btnDetails";
+            this.btnDetails.PareName = null;
+            this.btnDetails.RowIndex = 0;
             this.btnDetails.Size = new System.Drawing.Size(95, 37);
             this.btnDetails.TabIndex = 5;
             this.btnDetails.Text = "جزِییات";
@@ -115,14 +141,20 @@ namespace GAMA
             // 
             // btnAddGroup
             // 
+            this.btnAddGroup.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnAddGroup.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAddGroup.BackgroundImage")));
             this.btnAddGroup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnAddGroup.ColumnIndex = 0;
+            this.btnAddGroup.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAddGroup.FlatAppearance.BorderSize = 0;
             this.btnAddGroup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddGroup.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnAddGroup.ForeColor = System.Drawing.Color.White;
+            this.btnAddGroup.IsClicked = false;
             this.btnAddGroup.Location = new System.Drawing.Point(92, 413);
             this.btnAddGroup.Name = "btnAddGroup";
+            this.btnAddGroup.PareName = null;
+            this.btnAddGroup.RowIndex = 0;
             this.btnAddGroup.Size = new System.Drawing.Size(95, 37);
             this.btnAddGroup.TabIndex = 6;
             this.btnAddGroup.Text = "ثبت گروه";

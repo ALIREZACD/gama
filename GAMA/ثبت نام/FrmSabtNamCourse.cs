@@ -20,6 +20,7 @@ namespace GAMA
         //Variables****************************
         #region
 
+        private string selectedId;
         public static DataGridViewRow selected_row;
 
         #endregion
@@ -32,7 +33,7 @@ namespace GAMA
         {
             (new FrmAddEditSabtNamCourse(Moods.Add)).ShowDialog();
 
-            dataGridView1.ClearSelection();
+            LoadAllData();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -41,11 +42,9 @@ namespace GAMA
                 return;
             }
 
-            CaptureRow();
-
             (new FrmAddEditSabtNamCourse(Moods.Edit)).ShowDialog();
 
-            dataGridView1.ClearSelection();
+            LoadAllData();
         }
         private void BtnDetails_Click(object sender, EventArgs e)
         {
@@ -54,11 +53,7 @@ namespace GAMA
                 return;
             }
 
-            CaptureRow();
-
-            string id = "1";
-
-            (new FrmDetails(TableNames.SabtnamCourse,id)).ShowDialog();
+            (new FrmDetails(TableNames.SabtnamCourse,selectedId)).ShowDialog();
         }
         private void FrmSabtNamCourse_Load(object sender, EventArgs e)
         {
@@ -77,6 +72,26 @@ namespace GAMA
                 btnEdit.Right,
                 btnDetails.Top - 10);
         }
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                selected_row = dataGridView1.SelectedRows[0];
+                selectedId = Convert.ToString(selected_row.Cells["id"].Value);
+            }
+            else
+            {
+                selected_row = null;
+                selectedId = string.Empty;
+            }
+        }
+        private void DataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.Columns.Contains("id"))
+            {
+                dataGridView1.Columns["id"].Visible = false;
+            }
+        }
 
         #endregion
         //*************************************
@@ -84,16 +99,6 @@ namespace GAMA
         //Methods******************************
         #region
 
-        private void CaptureRow()
-        {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                selected_row = null;
-                return;
-            }
-
-            selected_row = dataGridView1.SelectedRows[0];
-        }
         private void LoadAllData()
         {
             SqlServerClass.ShowQueryInDataGridView(dataGridView1, "EXEC Get_SabtnamCourse_All");

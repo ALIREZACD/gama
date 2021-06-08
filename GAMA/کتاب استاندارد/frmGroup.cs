@@ -21,6 +21,7 @@ namespace GAMA
         //Variables****************************
         #region
 
+        private string selectedId;
         public static DataGridViewRow selected_row;
 
         #endregion
@@ -34,7 +35,6 @@ namespace GAMA
             (new FrmAddEditGroup(Moods.Add)).ShowDialog();
 
             MainCombo1_SelectedIndexChanged(null, null);
-            dataGridView1.ClearSelection();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -43,12 +43,9 @@ namespace GAMA
                 return;
             }
 
-            CaptureRow();
-
             (new FrmAddEditGroup(Moods.Edit)).ShowDialog();
 
             MainCombo1_SelectedIndexChanged(null, null);
-            dataGridView1.ClearSelection();
         }
         private void FrmGroup_Load(object sender, EventArgs e)
         {
@@ -58,7 +55,6 @@ namespace GAMA
 
             SetLocations();
             Theme.Set(this, panel1);
-            //DataGridViewManager.SetWidth(dataGridView1, "نام خوشه", 20, "شماره ردیف", 20, "نام گروه", 60);
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -69,9 +65,7 @@ namespace GAMA
 
             if (MessageBox.Show("آیا از حذف کردن اطمینان دارید ؟", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                string id = SqlServerClass.Select(TableNames.GroupCourse, "Id", string.Format("groupName = N'{0}'", Convert.ToString(dataGridView1.SelectedRows[0].Cells["نام گروه"].Value)));
-
-                if (SqlServerClass.Delete(TableNames.GroupCourse, "Id = " + id))
+                if (SqlServerClass.Delete(TableNames.GroupCourse, "Id = " +selectedId))
                 {
                     DataGridViewManager.DeleteRow(dataGridView1, dataGridView1.CurrentCell.RowIndex);
                     MessageBox.Show("حذف شد");
@@ -85,25 +79,11 @@ namespace GAMA
                 return;
             }
 
-            CaptureRow();
-
-            //string name, time, date;
-
-            //name = string.Empty;
-            //time = SqlServerClass.Select(TableNames.GroupCourse, "InsertTime", string.Format("groupName = N'{0}'", selected_row.Cells["نام گروه"].Value));
-            //date = SqlServerClass.Select(TableNames.GroupCourse, "InsertDate", string.Format("groupName = N'{0}'", selected_row.Cells["نام گروه"].Value));
-
-            string id = SqlServerClass.Select(TableNames.GroupCourse, "Id", string.Format("groupName = N'{0}'", Convert.ToString(dataGridView1.SelectedRows[0].Cells["نام گروه"].Value))); ;
-
-            (new FrmDetails(TableNames.GroupCourse, id)).ShowDialog();
+            (new FrmDetails(TableNames.GroupCourse, selectedId)).ShowDialog();
         }
         private void BtnAddCourse_Click(object sender, EventArgs e)
         {
-            CaptureRow();
-
             (new FrmAddEditCourse(Moods.Add)).ShowDialog();
-
-            dataGridView1.ClearSelection();
         }
         private void FrmGroup_Paint(object sender, PaintEventArgs e)
         {
@@ -118,6 +98,27 @@ namespace GAMA
         private void FrmGroup_FormClosed(object sender, FormClosedEventArgs e)
         {
             selected_row = null;
+            selectedId = string.Empty;
+        }
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                selected_row = dataGridView1.SelectedRows[0];
+                selectedId = Convert.ToString(selected_row.Cells["id"].Value);
+            }
+            else
+            {
+                selected_row = null;
+                selectedId = string.Empty;
+            }
+        }
+        private void DataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.Columns.Contains("id"))
+            {
+                dataGridView1.Columns["id"].Visible = false;
+            }
         }
         private void MainCombo1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -136,8 +137,6 @@ namespace GAMA
             {
                 LoadData();
             }
-
-            dataGridView1.ClearSelection();
         }
 
         #endregion
@@ -148,19 +147,9 @@ namespace GAMA
 
         private void LoadData()
         {
-            string id = SqlServerClass.Select(TableNames.BranchCourse, "Id", string.Format("branchName = N'{0}'", Convert.ToString(mainCombo1.SelectedItem)));
+            string id = SqlServerClass.Select(TableNames.BranchCourse, "Id", string.Format("branchName = N'{0}'", mainCombo1.SelectedItem));
 
             SqlServerClass.ShowQueryInDataGridView(dataGridView1, string.Format("EXEC Get_Group_Condition_BranchId @id = {0}", id));
-        }
-        private void CaptureRow()
-        {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                selected_row = null;
-                return;
-            }
-
-            selected_row = dataGridView1.SelectedRows[0];
         }
         private void LoadAllData()
         {

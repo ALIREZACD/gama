@@ -270,7 +270,9 @@ namespace GAMA
         private void LoadData()
         {
             DataGridViewRow row = FrmSabtNamCourse.selected_row;
+            id = Convert.ToString(FrmSabtNamCourse.selected_row.Cells["id"].Value);
 
+            txtId.Text = Convert.ToString(row.Cells["شماره ردیف"].Value);
             txtName.Text = Convert.ToString(row.Cells["نام"].Value);
             txtLName.Text = Convert.ToString(row.Cells["نام خانوادگی"].Value);
             mainCombo1.SelectedItem = Convert.ToString(row.Cells["دوره"].Value);

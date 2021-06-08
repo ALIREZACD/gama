@@ -1,4 +1,9 @@
 .vs/
 >>>>>>> Goo
+<<<<<<< HEAD
 GAMA/bin/Debug/GamaBank.mdf
 GAMA/bin/Debug/GamaBank_log.ldf
+=======
+GAMA/bin/Debug/GamaBank_log.ldf
+GAMA/bin/Debug/GamaBank.mdf
+>>>>>>> 7db070a0e50590fa1a3c465a0d7b981569a3e4e4

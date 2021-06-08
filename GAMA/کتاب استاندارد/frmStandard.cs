@@ -22,6 +22,7 @@ namespace GAMA
         //Variables****************************
         #region
 
+        private string selectedId;
         public static DataGridViewRow selected_row;
         private const string fieldCondition = "نام دوره";
 
@@ -36,7 +37,6 @@ namespace GAMA
             (new FrmAddEditCourse(Moods.Add)).ShowDialog();
 
             ComboSearch_SelectedIndexChanged(null, null);
-            dataGridView1.ClearSelection();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -45,12 +45,9 @@ namespace GAMA
                 return;
             }
 
-            CaptureRow();
-
             (new FrmAddEditCourse(Moods.Edit)).ShowDialog();
 
             ComboSearch_SelectedIndexChanged(null, null);
-            dataGridView1.ClearSelection();
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -61,9 +58,7 @@ namespace GAMA
 
             if (MessageBox.Show("آیا از حذف کردن اطمینان دارید ؟", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                string id = SqlServerClass.Select(TableNames.Course, "Id", string.Format("courseName = N'{0}'", Convert.ToString(dataGridView1.SelectedRows[0].Cells[fieldCondition].Value)));
-
-                if (SqlServerClass.Delete(TableNames.Course, "Id = " + id))
+                if (SqlServerClass.Delete(TableNames.Course, "Id = " + selectedId))
                 {
                     DataGridViewManager.DeleteRow(dataGridView1, dataGridView1.CurrentCell.RowIndex);
                     MessageBox.Show("حذف شد");
@@ -77,19 +72,7 @@ namespace GAMA
                 return;
             }
 
-            CaptureRow();
-
-            string name, time, date;
-
-            //// test!!!!!!!!!!!
-            //name = string.Empty;
-
-            //time = SqlServerClass.Select(TableNames.Course, "InsertTime", string.Format("courseName = N'{0}'", selected_row.Cells[fieldCondition].Value));
-            //date = SqlServerClass.Select(TableNames.Course, "InsertDate", string.Format("courseName = N'{0}'", selected_row.Cells[fieldCondition].Value));
-
-            string id = SqlServerClass.Select(TableNames.Course, "Id", string.Format("courseName = N'{0}'", Convert.ToString(dataGridView1.SelectedRows[0].Cells[fieldCondition].Value)));
-
-            (new FrmDetails(TableNames.Course, id)).ShowDialog();
+            (new FrmDetails(TableNames.Course, selectedId)).ShowDialog();
         }
         private void FrmStandard_Load(object sender, EventArgs e)
         {
@@ -131,6 +114,13 @@ namespace GAMA
                 LoadGroupData();
             }
         }
+        private void DataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.Columns.Contains("id"))
+            {
+                dataGridView1.Columns["id"].Visible = false;
+            }
+        }
         private void ComboSearch_SelectedIndexChanged(object sender, EventArgs e)
         {
             DataGridViewManager.Clear(dataGridView1);
@@ -150,18 +140,31 @@ namespace GAMA
                     LoadAllData();
                     break;
                 case "خوشه":
+                    Comboes_SelectedIndexChanged(comboBranch, null);
                     comboGroup.SelectedIndex = -1;
                     FindPnl();
                     break;
                 case "گروه":
                     comboBranch.SelectedIndex = -1;
+                    Comboes_SelectedIndexChanged(comboGroup, null);
                     FindPnl();
                     break;
                 default:
                     break;
             }
-
-            dataGridView1.ClearSelection();
+        }
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                selected_row = dataGridView1.SelectedRows[0];
+                selectedId = Convert.ToString(selected_row.Cells["id"].Value);
+            }
+            else
+            {
+                selected_row = null;
+                selectedId = string.Empty;
+            }
         }
 
         #endregion
@@ -188,10 +191,6 @@ namespace GAMA
                     item.Hide();
                 }
             }
-        }
-        private void CaptureRow()
-        {
-            selected_row = dataGridView1.SelectedRows[0];
         }
         private void LoadAllData()
         {

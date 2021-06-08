@@ -124,7 +124,7 @@ namespace GAMA
             txtId.Text = Convert.ToString(FrmGroup.selected_row.Cells["شماره ردیف"].Value);
             mainTxt1.Text = Convert.ToString(FrmGroup.selected_row.Cells["نام گروه"].Value);
 
-            id = SqlServerClass.Select(TableNames.GroupCourse, "Id", string.Format("groupName = N'{0}'", Convert.ToString(FrmGroup.selected_row.Cells["نام گروه"].Value)));
+            id = Convert.ToString(FrmGroup.selected_row.Cells["id"].Value);
             branchId = SqlServerClass.Select(TableNames.GroupCourse, "IdBranch", string.Format("Id = {0}", id));
 
             mainCombo1.SelectedItem = FrmGroup.selected_row.Cells["نام خوشه"].Value;

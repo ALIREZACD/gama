@@ -38,7 +38,7 @@ namespace GAMA
                 return;
             }
 
-            string time = DateTimeManager.GetTime(DateTime.Now);
+            string time = DateTimeManager.GetTime(DateTime.Now).Substring(0,5);
 
             string[] fields = { "branchName", "InsertDate", "InsertTime", "UserId" };
             string[] values = { txtName.Text, StaticData.current_date, time, Convert.ToString(StaticData.current_user.Id) };
@@ -116,9 +116,14 @@ namespace GAMA
         }
         private void LoadData()
         {
+            if (FrmBranch.selected_row == null)
+            {
+                return;
+            }
+
             txtId.Text = Convert.ToString(FrmBranch.selected_row.Cells["شماره ردیف"].Value);
             txtName.Text = Convert.ToString(FrmBranch.selected_row.Cells["نام خوشه"].Value);
-            id = SqlServerClass.Select(TableNames.BranchCourse, "Id", string.Format("branchName = N'{0}'", Convert.ToString(FrmBranch.selected_row.Cells["نام خوشه"].Value)));
+            id = Convert.ToString(FrmBranch.selected_row.Cells["id"].Value);
         }
         private void SetLocations()
         {   

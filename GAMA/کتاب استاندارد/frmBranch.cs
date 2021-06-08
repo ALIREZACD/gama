@@ -21,6 +21,7 @@ namespace GAMA
         //Variables****************************
         #region
 
+        private string selectedId;
         public static DataGridViewRow selected_row = null;
 
         #endregion
@@ -34,7 +35,6 @@ namespace GAMA
             (new FrmAddEditBranch(Moods.Add)).ShowDialog();
 
             LoadData();
-            dataGridView1.ClearSelection();
         }
         private void BtnEdit_Click(object sender, EventArgs e)
         {
@@ -43,20 +43,15 @@ namespace GAMA
                 return;
             }
 
-            CaptureRow();
-
             (new FrmAddEditBranch(Moods.Edit)).ShowDialog();
 
             LoadData();
-            dataGridView1.ClearSelection();
         }
         private void FrmBranch_Load(object sender, EventArgs e)
         {
             SetLocations();
             Theme.Set(this);
             LoadData();
-            dataGridView1.ClearSelection();
-            //DataGridViewManager.SetWidth(dataGridView1, "نام خوشه", 70, "شماره ردیف", 30);
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
@@ -67,12 +62,9 @@ namespace GAMA
 
             if (MessageBox.Show("آیا از حذف کردن اطمینان دارید ؟", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                string id = SqlServerClass.Select(TableNames.BranchCourse, "Id", string.Format("branchName = N'{0}'", Convert.ToString(dataGridView1.SelectedRows[0].Cells["نام خوشه"].Value)));
-
-                if (SqlServerClass.Delete(TableNames.BranchCourse, "Id = " + id))
+                if (SqlServerClass.Delete(TableNames.BranchCourse, "Id = " + selectedId))
                 {
                     DataGridViewManager.DeleteRow(dataGridView1, dataGridView1.CurrentCell.RowIndex);
-                    LoadData();
                     MessageBox.Show("حذف شد");
                 }
             }
@@ -84,25 +76,11 @@ namespace GAMA
                 return;
             }
 
-            CaptureRow();
-
-            //string name, time, date;
-
-            //name = string.Empty;
-            //time = SqlServerClass.Select(TableNames.BranchCourse, "InsertTime", string.Format("branchName = N'{0}'", selected_row.Cells["نام خوشه"].Value));
-            //date = SqlServerClass.Select(TableNames.BranchCourse, "InsertDate", string.Format("branchName = N'{0}'", selected_row.Cells["نام خوشه"].Value));
-
-            string id = SqlServerClass.Select(TableNames.BranchCourse, "Id", string.Format("branchName = N'{0}'", Convert.ToString(dataGridView1.SelectedRows[0].Cells["نام خوشه"].Value)));
-
-            (new FrmDetails(TableNames.BranchCourse, id)).ShowDialog();
+            (new FrmDetails(TableNames.BranchCourse, selectedId)).ShowDialog();
         }
         private void BtnAddGroup_Click(object sender, EventArgs e)
         {
-            CaptureRow();
-
             (new FrmAddEditGroup(Moods.Add)).ShowDialog();
-
-            dataGridView1.ClearSelection();
         }
         private void FrmBranch_Paint(object sender, PaintEventArgs e)
         {
@@ -117,6 +95,27 @@ namespace GAMA
         private void FrmBranch_FormClosed(object sender, FormClosedEventArgs e)
         {
             selected_row = null;
+            selectedId = string.Empty;
+        }
+        private void DataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.SelectedRows.Count != 0)
+            {
+                selected_row = dataGridView1.SelectedRows[0];
+                selectedId = Convert.ToString(selected_row.Cells["id"].Value);
+            }
+            else
+            {
+                selected_row = null;
+                selectedId = string.Empty;
+            }
+        }
+        private void DataGridView1_DataSourceChanged(object sender, EventArgs e)
+        {
+            if (dataGridView1.Columns.Contains("id"))
+            {
+                dataGridView1.Columns["id"].Visible = false;
+            }
         }
 
         #endregion
@@ -128,16 +127,6 @@ namespace GAMA
         private void LoadData()
         {
             SqlServerClass.ShowQueryInDataGridView(dataGridView1, "EXEC Get_Branch_All");
-        }
-        private void CaptureRow()
-        {
-            if (dataGridView1.SelectedRows.Count == 0)
-            {
-                selected_row = null;
-                return;
-            }
-
-            selected_row = dataGridView1.SelectedRows[0];
         }
         private void SetLocations()
         {

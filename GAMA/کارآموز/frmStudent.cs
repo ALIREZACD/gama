@@ -22,7 +22,7 @@ namespace GAMA
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            (new FrmAddEditSabtNamCourse(Moods.Add)).Show();
+            (new FrmAddEditStudent(Moods.Add)).Show();
         }
         private void FrmStudent_Load(object sender, EventArgs e)
         {
@@ -39,7 +39,7 @@ namespace GAMA
 
         private void LoadData()
         {
-
+            SqlServerClass.ShowQueryInDataGridView(dataGridView1,("EXEC Get_All_Student "));
         }
         private void SetLocations()
         {
@@ -50,6 +50,7 @@ namespace GAMA
 
             // X
             Locations.CenterWidth(this, dataGridView1, btnAdd);
+            Locations.CenterWidth(this, panel1);
             Locations.Right(btnAdd, 3, true, btnEdit);
             Locations.Left(btnAdd, 3, true, btnDelete, btnDetails);
         }

@@ -34,8 +34,12 @@ namespace GAMA
             this.btnDelete = new GAMA.BtnSimple();
             this.btnAdd = new GAMA.BtnSimple();
             this.btnEdit = new GAMA.BtnSimple();
+            this.searchCombo = new GAMA.ComboSimple();
+            this.mainLbl = new GAMA.LblSimple();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnDetails
@@ -51,6 +55,9 @@ namespace GAMA
             this.btnDetails.Size = new System.Drawing.Size(95, 37);
             this.btnDetails.TabIndex = 14;
             this.btnDetails.Text = "جزِییات";
+            this.btnDetails.BorderColor = System.Drawing.Color.LightPink;
+            this.btnDetails.BorderSize = 1;
+            this.btnDetails.BorderRadius = 10;
             this.btnDetails.UseVisualStyleBackColor = true;
             // 
             // btnDelete
@@ -67,6 +74,9 @@ namespace GAMA
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.BorderColor = System.Drawing.Color.LightPink;
+            this.btnDelete.BorderSize = 1;
+            this.btnDelete.BorderRadius = 10;
             // 
             // btnAdd
             // 
@@ -82,6 +92,9 @@ namespace GAMA
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "ثبت";
             this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.BorderColor = System.Drawing.Color.LightPink;
+            this.btnAdd.BorderSize = 1;
+            this.btnAdd.BorderRadius = 10;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnEdit
@@ -98,6 +111,9 @@ namespace GAMA
             this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "ویرایش";
             this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.BorderColor = System.Drawing.Color.LightPink;
+            this.btnEdit.BorderSize = 1;
+            this.btnEdit.BorderRadius = 10;
             // 
             // dataGridView1
             // 
@@ -119,6 +135,7 @@ namespace GAMA
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.HasBorder = true;
             this.HasHeader = true;
             this.HeaderforeColor = System.Drawing.Color.White;
@@ -133,7 +150,35 @@ namespace GAMA
             this.Controls.SetChildIndex(this.btnDetails, 0);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-
+            //
+            //lbl Main
+            //
+            this.mainLbl.AutoSize = true;
+            this.mainLbl.ForeColor = System.Drawing.Color.Black;
+            this.mainLbl.Location = new System.Drawing.Point(224, 3);
+            this.mainLbl.Name = "mainlbl1";
+            this.mainLbl.Font = new System.Drawing.Font("B Nazanin", 14F);
+            this.mainLbl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.mainLbl.Size = new System.Drawing.Size(161, 32);
+            this.mainLbl.Text = "فیلتر بر اساس ... :";
+            // 
+            // searchCombo
+            // 
+            this.searchCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.searchCombo.Font = new System.Drawing.Font("B Nazanin", 11F);
+            this.searchCombo.FormattingEnabled = true;
+            this.searchCombo.Location = new System.Drawing.Point(3, 3);
+            this.searchCombo.Name = "mainCombo1";
+            this.searchCombo.Size = new System.Drawing.Size(180, 40);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.searchCombo);
+            this.panel1.Controls.Add(this.mainLbl);
+            this.panel1.Location = new System.Drawing.Point(170, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(390, 45);
+            this.panel1.TabIndex = 11;
         }
 
         #endregion
@@ -142,6 +187,9 @@ namespace GAMA
         private BtnSimple btnDelete;
         private BtnSimple btnAdd;
         private BtnSimple btnEdit;
+        private ComboSimple searchCombo;
+        private LblSimple mainLbl;
+        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

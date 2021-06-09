@@ -174,7 +174,7 @@ namespace MyClass
             return d;
         }
         //_________________________________________________________________________
-        public static bool InsertWithFields(string tableName, params string[] fieldNamesANDValues)
+        public static bool InsertWithFields(string tableName, params object[] fieldNamesANDValues)
         {
             bool output = false;
 
@@ -189,9 +189,9 @@ namespace MyClass
                 string parameters = "";
                 for (int i = 0; i < fieldNamesANDValues.Length; i += 2)
                 {
-                    names += fieldNamesANDValues[i] + ",";
+                    names += fieldNamesANDValues[i].ToString() + ",";
                     parameters += "@" + "Field" + i + ",";
-                    command.Parameters.AddWithValue("Field" + i, fieldNamesANDValues[i + 1].ToString());
+                    command.Parameters.AddWithValue("Field" + i, fieldNamesANDValues[i + 1]);
                 }
                 names = names.Remove(names.Length - 1);//end (,) remove
                 parameters = parameters.Remove(parameters.Length - 1);//end (,) remove
@@ -210,6 +210,19 @@ namespace MyClass
                 connection.Close();
             }
             return output;
+        }
+        //_________________________________________________________________________
+        public static bool InsertWithFields(string tableName, string[] fields, object[] values)
+        {
+            CheckIfAreSameLength(fields, values);
+            int mergedLength = fields.Length + values.Length;
+            object[] fieldsAndValues = new object[mergedLength];
+            for (int i = 0, c = 0; i < mergedLength && c < fields.Length; i += 2, c++)
+            {
+                fieldsAndValues[i] = fields[c];
+                fieldsAndValues[i + 1] = values[c];
+            }
+            return InsertWithFields(tableName, fieldsAndValues);
         }
         //_________________________________________________________________________
         public static ArrayList Search1Record_ArrayList(string tableName, string Condition = "")
@@ -492,6 +505,16 @@ namespace MyClass
                 sq.Close();
             }
             return yes_no;
+        }
+        //_________________________________________________________________________
+        private static void CheckIfAreSameLength(params object[][] arrays)
+        {
+            if (arrays.Length == 1)
+                return;
+            int baseLength = arrays[0].Length;
+            for (int i = 1; i < arrays.Length; i++)
+                if (arrays[i].Length != baseLength)
+                    throw new ArgumentException("Array's length should be the same");
         }
     }
 }

@@ -67,13 +67,16 @@ namespace GAMA
             // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(53)))), ((int)(((byte)(49)))), ((int)(((byte)(72)))));
             this.btnAdd.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAdd.BackgroundImage")));
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnAdd.ColumnIndex = 0;
+            this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("B Nazanin", 12F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.IsClicked = false;
             this.btnAdd.Location = new System.Drawing.Point(309, 405);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PareName = null;
@@ -142,6 +145,7 @@ namespace GAMA
             this.txtDescription.RowIndex = 7;
             this.txtDescription.Size = new System.Drawing.Size(162, 35);
             this.txtDescription.TabIndex = 66;
+            this.txtDescription.Tag = "توضیحات";
             this.txtDescription.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl9
@@ -171,6 +175,7 @@ namespace GAMA
             this.txtProjectHour.RowIndex = 6;
             this.txtProjectHour.Size = new System.Drawing.Size(162, 35);
             this.txtProjectHour.TabIndex = 55;
+            this.txtProjectHour.Tag = "ساعت پروژه";
             this.txtProjectHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl14
@@ -200,6 +205,7 @@ namespace GAMA
             this.txtKarvarziHour.RowIndex = 5;
             this.txtKarvarziHour.Size = new System.Drawing.Size(162, 35);
             this.txtKarvarziHour.TabIndex = 54;
+            this.txtKarvarziHour.Tag = "ساعت کارورزی";
             this.txtKarvarziHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl15
@@ -229,6 +235,7 @@ namespace GAMA
             this.txtAmaliHour.RowIndex = 4;
             this.txtAmaliHour.Size = new System.Drawing.Size(162, 35);
             this.txtAmaliHour.TabIndex = 52;
+            this.txtAmaliHour.Tag = "ساعت عملی";
             this.txtAmaliHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl13
@@ -258,6 +265,7 @@ namespace GAMA
             this.txtNazariHour.RowIndex = 3;
             this.txtNazariHour.Size = new System.Drawing.Size(162, 35);
             this.txtNazariHour.TabIndex = 51;
+            this.txtNazariHour.Tag = "ساعت نظری";
             this.txtNazariHour.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl12
@@ -287,6 +295,7 @@ namespace GAMA
             this.txtCourseLatin.RowIndex = 2;
             this.txtCourseLatin.Size = new System.Drawing.Size(162, 35);
             this.txtCourseLatin.TabIndex = 49;
+            this.txtCourseLatin.Tag = "نام استاندارد به لاتین";
             this.txtCourseLatin.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl10
@@ -316,6 +325,7 @@ namespace GAMA
             this.txtCourseGrade.RowIndex = 1;
             this.txtCourseGrade.Size = new System.Drawing.Size(162, 35);
             this.txtCourseGrade.TabIndex = 48;
+            this.txtCourseGrade.Tag = "سطح تحصیلات ورودی";
             this.txtCourseGrade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl11
@@ -345,6 +355,7 @@ namespace GAMA
             this.txtPreCourse.RowIndex = 8;
             this.txtPreCourse.Size = new System.Drawing.Size(162, 35);
             this.txtPreCourse.TabIndex = 46;
+            this.txtPreCourse.Tag = "پیشنیاز";
             this.txtPreCourse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl7
@@ -374,6 +385,7 @@ namespace GAMA
             this.txtTypeKaroDanesh.RowIndex = 7;
             this.txtTypeKaroDanesh.Size = new System.Drawing.Size(162, 35);
             this.txtTypeKaroDanesh.TabIndex = 45;
+            this.txtTypeKaroDanesh.Tag = "نوع کار و دانش";
             this.txtTypeKaroDanesh.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl8
@@ -403,6 +415,7 @@ namespace GAMA
             this.txtTypeCourse.RowIndex = 6;
             this.txtTypeCourse.Size = new System.Drawing.Size(162, 35);
             this.txtTypeCourse.TabIndex = 43;
+            this.txtTypeCourse.Tag = "نوع";
             this.txtTypeCourse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl6
@@ -432,6 +445,7 @@ namespace GAMA
             this.txtNewCode.RowIndex = 5;
             this.txtNewCode.Size = new System.Drawing.Size(162, 35);
             this.txtNewCode.TabIndex = 42;
+            this.txtNewCode.Tag = "کد استاندارد جدید";
             this.txtNewCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl5
@@ -461,6 +475,7 @@ namespace GAMA
             this.txtOldCode.RowIndex = 4;
             this.txtOldCode.Size = new System.Drawing.Size(162, 35);
             this.txtOldCode.TabIndex = 41;
+            this.txtOldCode.Tag = "کد استاندارد قديم";
             this.txtOldCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl4
@@ -490,6 +505,7 @@ namespace GAMA
             this.txtName.RowIndex = 2;
             this.txtName.Size = new System.Drawing.Size(162, 35);
             this.txtName.TabIndex = 39;
+            this.txtName.Tag = "نام دوره";
             this.txtName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl3
@@ -522,6 +538,7 @@ namespace GAMA
             this.comboGroupName.RowIndex = 3;
             this.comboGroupName.Size = new System.Drawing.Size(162, 34);
             this.comboGroupName.TabIndex = 40;
+            this.comboGroupName.Tag = "نام گروه";
             // 
             // mainlbl1
             // 
@@ -550,6 +567,7 @@ namespace GAMA
             this.txtId.RowIndex = 1;
             this.txtId.Size = new System.Drawing.Size(162, 35);
             this.txtId.TabIndex = 38;
+            this.txtId.Tag = "شماره ردیف";
             this.txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // mainlbl2

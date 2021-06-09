@@ -24,6 +24,8 @@ namespace GAMA
 
         private string id;
         private readonly Moods mood;
+        private DataGridViewRow row = null;
+        private readonly string table = TableNames.SabtnamCourse;
 
         #endregion
         //*************************************
@@ -160,7 +162,7 @@ namespace GAMA
             {
                 case Moods.Add:
                     insert1 = SqlServerClass.InsertWithFields(
-                        TableNames.SabtnamCourse,
+                        table,
                         fields1[0], values1[0],
                         fields1[1], values1[1],
                         fields1[2], values1[2],
@@ -176,7 +178,7 @@ namespace GAMA
                         );
                     break;
                 case Moods.Edit:
-                    insert1 = SqlServerClass.Update(TableNames.SabtnamCourse, fields1, values1, string.Format("id = {0}", id));
+                    insert1 = SqlServerClass.Update(table, fields1, values1, string.Format("id = {0}", id));
                     break;
                 default:
                     insert1 = false;
@@ -217,6 +219,7 @@ namespace GAMA
                 case Moods.Edit:
                     headerText = "ویرایش اطلاعات ثبت نام";
                     btnAdd.Text = "ویرایش";
+                    row = FrmSabtNamCourse.selected_row;
                     LoadData();
                     break;
                 default:
@@ -255,6 +258,7 @@ namespace GAMA
             txtDocument.Text = string.Empty;
             ControlManager.ClearControls(this);
             btnTasvir.BackgroundImage = btnEmza.BackgroundImage = null;
+            row = null;
         }
 
         #endregion
@@ -269,20 +273,14 @@ namespace GAMA
         }
         private void LoadData()
         {
-            DataGridViewRow row = FrmSabtNamCourse.selected_row;
-            id = Convert.ToString(FrmSabtNamCourse.selected_row.Cells["id"].Value);
+            if (row == null)
+            {
+                return;
+            }
 
-            txtId.Text = Convert.ToString(row.Cells["شماره ردیف"].Value);
-            txtName.Text = Convert.ToString(row.Cells["نام"].Value);
-            txtLName.Text = Convert.ToString(row.Cells["نام خانوادگی"].Value);
-            mainCombo1.SelectedItem = Convert.ToString(row.Cells["دوره"].Value);
-            txtNoeClass.Text = Convert.ToString(row.Cells["نوع کلاس"].Value);
-            txtSabtnamDate.Text = Convert.ToString(row.Cells["تاریخ ثبت نام"].Value);
-            txtShahrie.Text = Convert.ToString(row.Cells["شهریه"].Value);
-            txtNahveMoarefi.Text = Convert.ToString(row.Cells["نحوه معرفی"].Value);
-            txtVaghtAzad.Text = Convert.ToString(row.Cells["وقت آزاد"].Value);
-            txtSabtnamUser.Text = Convert.ToString(row.Cells["ثبت نام کننده"].Value);
-            txtDescription.Text = Convert.ToString(row.Cells["توضیحات"].Value);
+            ControlManager.LoadValues(row, panel1);
+
+            id = Convert.ToString(FrmSabtNamCourse.selected_row.Cells["id"].Value);
         }
         private void LoadDetails()
         {

@@ -29,7 +29,8 @@
 //        #region Properties
 
 //        public NotificationType Type { get => _type; set { _type = value; SetTheme(value); } }
-//        public string Message {
+//        public string Message
+//        {
 //            get => lblMessage.Text;
 //            set
 //            {
@@ -62,7 +63,7 @@
 
 //        private void frmAlter_Resize(object sender, EventArgs e)
 //        {
-//            RoundEdge();   
+//            RoundEdge();
 //        }
 
 //        #endregion

@@ -55,9 +55,9 @@ namespace GAMA
             this.btnDetails.Size = new System.Drawing.Size(95, 37);
             this.btnDetails.TabIndex = 14;
             this.btnDetails.Text = "جزِییات";
-            this.btnDetails.BorderColor = System.Drawing.Color.LightPink;
-            this.btnDetails.BorderSize = 1;
-            this.btnDetails.BorderRadius = 10;
+            //this.btnDetails.BorderColor = System.Drawing.Color.LightPink;
+            //this.btnDetails.BorderSize = 1;
+            //this.btnDetails.BorderRadius = 10;
             this.btnDetails.UseVisualStyleBackColor = true;
             // 
             // btnDelete
@@ -74,9 +74,9 @@ namespace GAMA
             this.btnDelete.TabIndex = 13;
             this.btnDelete.Text = "حذف";
             this.btnDelete.UseVisualStyleBackColor = true;
-            this.btnDelete.BorderColor = System.Drawing.Color.LightPink;
-            this.btnDelete.BorderSize = 1;
-            this.btnDelete.BorderRadius = 10;
+            //this.btnDelete.BorderColor = System.Drawing.Color.LightPink;
+            //this.btnDelete.BorderSize = 1;
+            //this.btnDelete.BorderRadius = 10;
             // 
             // btnAdd
             // 
@@ -92,9 +92,9 @@ namespace GAMA
             this.btnAdd.TabIndex = 12;
             this.btnAdd.Text = "ثبت";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.BorderColor = System.Drawing.Color.LightPink;
-            this.btnAdd.BorderSize = 1;
-            this.btnAdd.BorderRadius = 10;
+            //this.btnAdd.BorderColor = System.Drawing.Color.LightPink;
+            //this.btnAdd.BorderSize = 1;
+            //this.btnAdd.BorderRadius = 10;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
             // btnEdit
@@ -111,9 +111,9 @@ namespace GAMA
             this.btnEdit.TabIndex = 11;
             this.btnEdit.Text = "ویرایش";
             this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.BorderColor = System.Drawing.Color.LightPink;
-            this.btnEdit.BorderSize = 1;
-            this.btnEdit.BorderRadius = 10;
+            //this.btnEdit.BorderColor = System.Drawing.Color.LightPink;
+            //this.btnEdit.BorderSize = 1;
+            //this.btnEdit.BorderRadius = 10;
             // 
             // dataGridView1
             // 

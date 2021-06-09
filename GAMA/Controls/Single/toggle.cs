@@ -18,6 +18,7 @@ namespace GAMA
         private Color offBackColor = Color.Gray;
         private Color offToggleColor = Color.Gainsboro;
         private bool style = true;
+
         //property
         public Color OnBackColor { get { return onBackColor;} set {onBackColor = value; this.Invalidate();}}
         public Color OnToggleColor { get => onToggleColor; set { onToggleColor = value; this.Invalidate(); } }

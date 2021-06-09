@@ -98,12 +98,17 @@
     <Compile Include="Controls\Single\DayItem.designer.cs">
       <DependentUpon>DayItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Single\frmAlter.cs" />
     <Compile Include="Controls\Single\HorizontalListNavigator.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Single\HorizontalListNavigator.designer.cs">
       <DependentUpon>HorizontalListNavigator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frmAlter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmAlter.designer.cs">
+      <DependentUpon>frmAlter.cs</DependentUpon>
     </Compile>
     <Compile Include="Dialogs\frmDatePicker.cs">
       <SubType>Form</SubType>
@@ -280,6 +285,9 @@
     <EmbeddedResource Include="Controls\Single\HorizontalListNavigator.resx">
       <DependentUpon>HorizontalListNavigator.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmAlter.resx">
+      <DependentUpon>frmAlter.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frmDatePicker.resx">
       <DependentUpon>frmDatePicker.cs</DependentUpon>
     </EmbeddedResource>
@@ -354,6 +362,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Signature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Danger.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Success.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

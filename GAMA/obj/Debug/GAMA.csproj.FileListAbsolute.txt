@@ -95,7 +95,6 @@ F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmMaster.resources
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.DayItem.resources
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.HorizontalListNavigator.resources
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmDatePicker.resources
-F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditSabtNam.resources
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmStudent.resources
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditBranch.resources
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmMain.resources
@@ -120,3 +119,6 @@ C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmDatePicker.resou
 C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditStudent.resources
 C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditSabtNamCourse.resources
 C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.frmAlter.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditSabtNamCourse.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources

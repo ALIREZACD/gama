@@ -44,7 +44,7 @@ namespace GAMA
             }
             return false;
         }
-        public static void ReadOnly(Control parent, bool value , params Control[] exeptions)
+        public static void ReadOnly(Control parent, bool value, params Control[] exeptions)
         {
             foreach (TextBoxBase item in parent.Controls.OfType<TextBoxBase>())
             {
@@ -84,6 +84,13 @@ namespace GAMA
         {
             combo.Items.Clear();
             combo.Items.AddRange(data.ToArray());
+        }
+        public static void LoadValues(DataGridViewRow row, Control parent)
+        {
+            foreach (TextBox item in parent.Controls.OfType<TextBox>())
+            {
+                item.Text = Convert.ToString(row.Cells[Convert.ToString(item.Tag)].Value);
+            }
         }
     }
 }

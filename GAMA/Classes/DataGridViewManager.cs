@@ -145,6 +145,16 @@ namespace GAMA
             return output;
         }
 
+        // Capture
+        public static string GetCellValue(DataGridViewCell cell)
+        {
+            string output;
+
+            output = Convert.ToString(cell.Value);
+
+            return output;
+        }
+
         #endregion
         //*************************************
     }

@@ -25,7 +25,9 @@ namespace GAMA
 
         private readonly Moods mood;
         private string id = string.Empty;
+        private DataGridViewRow row = null;
         private string branchId = string.Empty;
+        private readonly string table = TableNames.GroupCourse;
 
         #endregion
         //*************************************
@@ -40,7 +42,7 @@ namespace GAMA
                 return;
             }
 
-            string time = DateTimeManager.GetTime(DateTime.Now);
+            string time = DateTimeManager.GetTime(DateTime.Now).Substring(0, 5);
             branchId = SqlServerClass.Select(TableNames.BranchCourse, "Id", string.Format("branchName = N'{0}'", mainCombo1.SelectedItem));
 
             string[] fields = { "IdBranch", "groupName", "InsertDate", "InsertTime", "UserId" };
@@ -49,20 +51,20 @@ namespace GAMA
             switch (mood)
             {
                 case Moods.Add:
-                    if (SqlServerClass.RowExists(TableNames.GroupCourse, string.Format("groupName = N'{0}'", mainTxt1.Text)))
+                    if (SqlServerClass.RowExists(table, string.Format("groupName = N'{0}'", mainTxt1.Text)))
                     {
                         MessageBox.Show("گروهی با همین نام ثبت شده است");
                         return;
 
                     }
-                    if (SqlServerClass.InsertWithFields(TableNames.GroupCourse, fields[0], values[0], fields[1], values[1], fields[2], values[2], fields[3], values[3], fields[4], values[4]))
+                    if (SqlServerClass.InsertWithFields(table, fields[0], values[0], fields[1], values[1], fields[2], values[2], fields[3], values[3], fields[4], values[4]))
                     {
                         MessageBox.Show("درج شد");
                         Close();
                     }
                     break;
                 case Moods.Edit:
-                    if (SqlServerClass.Update(TableNames.GroupCourse, fields, values, string.Format("Id = {0}", id)))
+                    if (SqlServerClass.Update(table, fields, values, string.Format("Id = {0}", id)))
                     {
                         MessageBox.Show("ویرایش شد");
                         Close();
@@ -89,6 +91,7 @@ namespace GAMA
                 case Moods.Edit:
                     headerText = "ویرایش";
                     btnAdd.Text = "ویرایش";
+                    row = FrmGroup.selected_row;
                     LoadData();
                     break;
                 default:
@@ -117,17 +120,19 @@ namespace GAMA
 
         private void FindId()
         {
-            txtId.Text = Convert.ToString(SqlServerClass.RowCount(TableNames.GroupCourse, "Id") + 1);
+            txtId.Text = Convert.ToString(SqlServerClass.RowCount(table, "Id") + 1);
         }
         private void LoadData()
         {
-            txtId.Text = Convert.ToString(FrmGroup.selected_row.Cells["شماره ردیف"].Value);
-            mainTxt1.Text = Convert.ToString(FrmGroup.selected_row.Cells["نام گروه"].Value);
+            if (row == null)
+            {
+                return;
+            }
 
-            id = Convert.ToString(FrmGroup.selected_row.Cells["id"].Value);
-            branchId = SqlServerClass.Select(TableNames.GroupCourse, "IdBranch", string.Format("Id = {0}", id));
+            ControlManager.LoadValues(row, panel1);
 
-            mainCombo1.SelectedItem = FrmGroup.selected_row.Cells["نام خوشه"].Value;
+            id = Convert.ToString(row.Cells["id"].Value);
+            branchId = SqlServerClass.Select(table, "IdBranch", string.Format("Id = {0}", id));
         }
         private void FindBranch()
         {

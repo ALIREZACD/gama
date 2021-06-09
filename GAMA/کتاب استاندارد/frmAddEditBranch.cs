@@ -24,6 +24,8 @@ namespace GAMA
 
         private string id;
         private readonly Moods mood;
+        private DataGridViewRow row = null;
+        private readonly string table = TableNames.BranchCourse;
 
         #endregion
         //*************************************
@@ -38,7 +40,7 @@ namespace GAMA
                 return;
             }
 
-            string time = DateTimeManager.GetTime(DateTime.Now).Substring(0,5);
+            string time = DateTimeManager.GetTime(DateTime.Now).Substring(0, 5);
 
             string[] fields = { "branchName", "InsertDate", "InsertTime", "UserId" };
             string[] values = { txtName.Text, StaticData.current_date, time, Convert.ToString(StaticData.current_user.Id) };
@@ -46,20 +48,20 @@ namespace GAMA
             switch (mood)
             {
                 case Moods.Add:
-                    if (SqlServerClass.RowExists(TableNames.BranchCourse, string.Format("branchname = N'{0}'", txtName.Text)))
+                    if (SqlServerClass.RowExists(table, string.Format("branchname = N'{0}'", txtName.Text)))
                     {
                         MessageBox.Show("خوشه ای با همین نام ثبت شده است");
                         return;
-
                     }
-                    if (SqlServerClass.InsertWithFields(TableNames.BranchCourse, fields[0], values[0], fields[1], values[1], fields[2], values[2], fields[3], values[3]))
+
+                    if (SqlServerClass.InsertWithFields(table, fields[0], values[0], fields[1], values[1], fields[2], values[2], fields[3], values[3]))
                     {
                         MessageBox.Show("درج شد");
                         Close();
                     }
                     break;
                 case Moods.Edit:
-                    if (SqlServerClass.Update(TableNames.BranchCourse, fields, values, string.Format("Id = {0}", id)))
+                    if (SqlServerClass.Update(table, fields, values, string.Format("Id = {0}", id)))
                     {
                         MessageBox.Show("ویرایش شد");
                         Close();
@@ -84,6 +86,7 @@ namespace GAMA
                 case Moods.Edit:
                     headerText = "ویرایش";
                     btnAdd.Text = "ویرایش";
+                    row = FrmBranch.selected_row;
                     LoadData();
                     break;
                 default:
@@ -112,21 +115,21 @@ namespace GAMA
 
         private void FindId()
         {
-            txtId.Text = Convert.ToString(SqlServerClass.RowCount(TableNames.BranchCourse, "Id") + 1);
+            txtId.Text = Convert.ToString(SqlServerClass.RowCount(table, "Id") + 1);
         }
         private void LoadData()
         {
-            if (FrmBranch.selected_row == null)
+            if (row == null)
             {
                 return;
             }
 
-            txtId.Text = Convert.ToString(FrmBranch.selected_row.Cells["شماره ردیف"].Value);
-            txtName.Text = Convert.ToString(FrmBranch.selected_row.Cells["نام خوشه"].Value);
-            id = Convert.ToString(FrmBranch.selected_row.Cells["id"].Value);
+            ControlManager.LoadValues(row, panel1);
+
+            id = Convert.ToString(row.Cells["id"].Value);
         }
         private void SetLocations()
-        {   
+        {
             panel1.Designer.SetSize();
             panel1.Designer.SetLocation();
 

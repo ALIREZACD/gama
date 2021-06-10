@@ -1,5 +1,4 @@
-﻿using MyClass;
-using System;
+﻿using System;
 using System.ComponentModel;
 using System.Drawing;
 using System.Windows.Forms;
@@ -11,33 +10,22 @@ namespace GAMA
     {
         public Clock()
         {
-            _lblText = new Label
-            {
-                Text = Text,
-                Font = Font,
-                TextAlign = ContentAlignment.MiddleCenter,
-                AutoSize = true
-            };
-            AdjustLable();
-            Controls.Add(_lblText);
-            _lblText.TextChanged += LblText_TextChanged;
-
+            AdjustText();
             if (CutRegion)
-            {
                 SetRegion();
-            }
         }
 
         //Variables****************************
         #region
 
         // Booleans
-        private bool _cutRegion = true;
+        private bool _cutRegion = false;
 
         // Floats
         private float _clockValue = 0;
         private float _reachedWidth = 5;
         private float _unreachedWidth = 5;
+        private float _outLineWidth = 1;
 
         // Colors
         private Color _insideColor = Color.White;
@@ -45,23 +33,54 @@ namespace GAMA
         private Color _outLineColor = Color.White;
         private Color _unreachedColor = Color.Gray;
 
-        // Controls
-        private readonly Label _lblText = new Label();
+        // Images
+        private Image _insideImage;
+        private Image _cropedInsideImage;
+
+        // Sizes
+        private SizeF _textLableSize;
+
+        // Points
+        private PointF _textPoint;
 
         #endregion
         //*************************************
 
         //Properties***************************
         #region
-
+        public Image InsideImage
+        {
+            get => _insideImage;
+            set
+            {
+                _insideImage = value;
+                if (value != null)
+                {
+                    AdjustBackgroundImage();
+                    DrawClock();
+                }
+            }
+        }
+        public override ImageLayout BackgroundImageLayout
+        {
+            get => base.BackgroundImageLayout;
+            set
+            {
+                base.BackgroundImageLayout = value;
+                if (InsideImage != null)
+                {
+                    AdjustBackgroundImage();
+                    DrawClock();
+                }
+            }
+        }
         public Color InsideColor
         {
             get => _insideColor;
             set
             {
                 _insideColor = value;
-                _lblText.BackColor = value;
-                OnPaint(new PaintEventArgs(CreateGraphics(), ClientRectangle));
+                DrawClock();
             }
         }
         public Color OutLineColor
@@ -70,20 +89,37 @@ namespace GAMA
             set
             {
                 _outLineColor = value;
-                OnPaint(new PaintEventArgs(CreateGraphics(), ClientRectangle));
+                DrawClock();
+            }
+        }
+        public float OutLineWidth
+        {
+            get => _outLineWidth;
+            set
+            {
+                _outLineWidth = value;
+                AdjustBackgroundImage();
+                DrawClock();
             }
         }
         public Color ReachedColor
         {
             get => _reachedColor;
-            set { _reachedColor = value; DrawClock(); }
+            set
+            {
+                _reachedColor = value;
+                DrawClock();
+            }
         }
         public Color UnreachedColor
         {
             get => _unreachedColor;
-            set { _unreachedColor = value; DrawClock(); }
+            set
+            {
+                _unreachedColor = value;
+                DrawClock();
+            }
         }
-
         /// <summary>
         /// value should be between 0 and 59
         /// </summary>
@@ -103,8 +139,9 @@ namespace GAMA
             set
             {
                 _reachedWidth = value;
+                AdjustText();
+                AdjustBackgroundImage();
                 DrawClock();
-                AdjustLable();
             }
         }
         public float UnreachedWidth
@@ -113,8 +150,9 @@ namespace GAMA
             set
             {
                 _unreachedWidth = value;
+                AdjustText();
+                AdjustBackgroundImage();
                 DrawClock();
-                AdjustLable();
             }
         }
 
@@ -127,8 +165,9 @@ namespace GAMA
             set
             {
                 base.Text = value;
-                _lblText.Text = value;
-                AdjustLable();
+                SetLabelSize();
+                AdjustText();
+                DrawClock();
             }
         }
 
@@ -139,8 +178,9 @@ namespace GAMA
             set
             {
                 base.Font = value;
-                _lblText.Font = value;
-                AdjustLable();
+                SetLabelSize();
+                AdjustText();
+                DrawClock();
             }
         }
 
@@ -154,14 +194,7 @@ namespace GAMA
             {
                 _cutRegion = value;
 
-                if (CutRegion)
-                {
-                    SetRegion();
-                }
-                else
-                {
-                    Region = new Region(ClientRectangle);
-                }
+                SetRegion();
             }
         }
 
@@ -179,22 +212,20 @@ namespace GAMA
         protected override void OnTextChanged(EventArgs e)
         {
             base.OnTextChanged(e);
-
-            PlaceLabelToCenter();
+            AdjustText();
+            DrawClock();
         }
         protected override void OnSizeChanged(EventArgs e)
         {
             base.OnSizeChanged(e);
-
-            PlaceLabelToCenter();
-            if (CutRegion)
-            {
-                SetRegion();
-            }
+            AdjustBackgroundImage();
+            AdjustText();
+            DrawClock();
+            SetRegion();
         }
-        private void LblText_TextChanged(object sender, EventArgs e)
+        protected override void OnPaintBackground(PaintEventArgs e)
         {
-            AdjustLable();
+            //base.OnPaintBackground(e);
         }
 
         #endregion
@@ -206,54 +237,84 @@ namespace GAMA
         private void DrawClock()
         {
             // Creating Graphic
-            Bitmap image = new Bitmap(Width, Height);
-            DrawToBitmap(image, ClientRectangle);
-            Graphics gr = Graphics.FromImage(image);
-            gr.SmoothingMode = SmoothingMode.HighQuality;
-            gr.CompositingQuality = CompositingQuality.HighQuality;
+            using (Bitmap image = new Bitmap(Width, Height))
+            using (Graphics gr = Graphics.FromImage(image))
+            {
+                gr.SmoothingMode = SmoothingMode.HighQuality;
+                gr.CompositingQuality = CompositingQuality.HighQuality;
 
-            // Painting
-            PaintInsideColor(gr);
-            DrawProgressbar(gr, ClockValue);
-            gr = CreateGraphics();
-            gr.DrawImage(image, Point.Empty);
+                // Painting
+                gr.Clear(BackColor);
+                PaintInsideColor(gr);
+                DrawBackgroundImage(gr);
+                DrawText(gr);
+                DrawProgressbar(gr, ClockValue);
+                SetLabelSize();
 
-            //Make Memmory Free
-            DisposeObjects(gr, image);
+                using (Graphics gr2 = CreateGraphics())
+                    gr2.DrawImage(image, Point.Empty);
+            }
         }
         private void SetRegion()
         {
-            GraphicsPath path = new GraphicsPath();
-            path.AddEllipse(ClientRectangle);
-            Region = new Region(path);
+            if (Region != null)
+                DisposeObjects(Region);
+            Rectangle rect = ClientRectangle;
+            rect.Inflate(1, 1);
+            if (CutRegion)
+            {
+                using (GraphicsPath path = new GraphicsPath())
+                {
+                    path.AddEllipse(rect);
+                    Region = new Region(path);
+                }
+            }
+            else
+                Region = new Region(ClientRectangle);
         }
-        private bool IsLableOut()
+        // Text ----------------------------------------↓↓↓
+        public void SetLabelSize()
         {
-            if (_lblText.Width + 2 * Math.Max(ReachedWidth, UnreachedWidth) > Width - 4 ||
-                _lblText.Height + 2 * Math.Max(ReachedWidth, UnreachedWidth) > Height - 4)
+            using (Graphics gr = CreateGraphics())
+                _textLableSize = gr.MeasureString(Text, Font);
+        }
+        public void AdjustText()
+        {
+            AdjustTextFont();
+            SetLabelSize();
+            AdjustTextPoint();
+        }
+        private void AdjustTextFont()
+        {
+            const float rate = 0.3f;
+            SizeF tempTextSize = _textLableSize;
+            Font tempFont = new Font(Font.Name, Font.Size, Font.Style);
+            while (IsSizeOut(tempTextSize))
+            {
+                tempTextSize = TextRenderer.MeasureText(Text, tempFont);
+                float fontSize = tempFont.Size - rate;
+                tempFont = new Font(tempFont.FontFamily, tempFont.Size - rate < 0 ? 0 : fontSize, Font.Style);
+            }
+            if (Font.Size != tempFont.Size)
+                Font = new Font(tempFont.FontFamily, tempFont.Size, Font.Style);
+            DisposeObjects(tempFont);
+        }
+        private bool IsSizeOut(SizeF size)
+        {
+            if (size.Width + 2 * (Math.Max(ReachedWidth, UnreachedWidth) + OutLineWidth) > Width ||
+                size.Height + 2 * (Math.Max(ReachedWidth, UnreachedWidth) + OutLineWidth) > Height)
                 return true;
             return false;
         }
-        public void AdjustLable()
+        private void AdjustTextPoint()
         {
-            AdjustLableSize();
-            PlaceLabelToCenter();
-            Graphics gr = CreateGraphics();
-            gr.SmoothingMode = SmoothingMode.HighQuality;
-            PaintInsideColor(gr);
-            DisposeObjects(gr);
+            _textPoint = new PointF(Width / 2F - _textLableSize.Width / 2F, Height / 2F - _textLableSize.Height / 2F);
         }
-        private void AdjustLableSize()
+        private void DrawText(Graphics gr)
         {
-            const float rate = 0.5f;
-            while (IsLableOut())
-                _lblText.Font = new Font(_lblText.Font.FontFamily, _lblText.Font.Size - rate);
+            gr.DrawString(Text, Font, new SolidBrush(ForeColor), new RectangleF(_textPoint, _textLableSize));
         }
-        private void PlaceLabelToCenter()
-        {
-            Locations.CenterWidth(this, _lblText);
-            Locations.CenterHeight(this, _lblText);
-        }
+        // -----------------------------------------------
         private void CheckSecondValue(float value)
         {
             if (value > 59 || value < 0)
@@ -263,42 +324,107 @@ namespace GAMA
         {
             Rectangle rect = ClientRectangle;
             int maxWidth = -(int)Math.Max(ReachedWidth, UnreachedWidth);
-            rect.Inflate(maxWidth - 2, maxWidth - 2);
+            rect.Inflate(maxWidth, maxWidth);
             gr.FillEllipse(new SolidBrush(InsideColor), rect);
-            gr.DrawEllipse(new Pen(OutLineColor), rect);
         }
-        private void DrawProgressbar(Graphics gr, float second)
+        // Background Image ------------------------------
+        private void DrawBackgroundImage(Graphics gr)
         {
-            //Drawing GraphicS
-            DrawUnreachedProgress(gr, second == 0 ? 0.0001f : second, UnreachedWidth);
-            if (second > 0)
-                DrawReachedProgress(gr, second, ReachedWidth);
+            if (InsideImage == null) return;
+            gr.DrawImage(_cropedInsideImage, Width / 2 - _cropedInsideImage.Width / 2, Height / 2 - _cropedInsideImage.Height / 2);
         }
-        private void DisposeObjects(params IDisposable[] objects)
+        private void AdjustBackgroundImage()
         {
-            for (int i = 0; i < objects.Length; i++)
-                objects[i].Dispose();
+            if (InsideImage != null)
+            {
+                float maxWidth = Math.Max(ReachedWidth, UnreachedWidth);
+                _cropedInsideImage = CropImageEllipsis(ResizeImage(new Bitmap(InsideImage), (int)((maxWidth + OutLineWidth) * 2)), maxWidth);
+            }
+        }
+        private Bitmap ResizeImage(Bitmap bitmap, int subtract)
+        {
+            switch (BackgroundImageLayout)
+            {
+                case ImageLayout.Stretch:
+                    return new Bitmap(bitmap, Width - subtract, Height - subtract);
+                case ImageLayout.Zoom:
+                    int maxWidth = Math.Max(Height, Width);
+                    return new Bitmap(bitmap, maxWidth - subtract, maxWidth - subtract);
+                default:
+                    float maxBarWidth = Math.Max(ReachedWidth, UnreachedWidth);
+                    float width = bitmap.Width > Width - maxBarWidth ? Width - maxBarWidth : bitmap.Width;
+                    float height = bitmap.Height > Height - maxBarWidth ? Height - maxBarWidth : bitmap.Height;
+                    return bitmap.Clone(new RectangleF(width / 2, height / 2, width - 50, height - 50), System.Drawing.Imaging.PixelFormat.Format64bppArgb);
+            }
+        }
+        private Bitmap CropImageEllipsis(Bitmap bitmap, float subtract)
+        {
+            Bitmap bt = new Bitmap(bitmap.Width, bitmap.Height);
+            using (Graphics g = Graphics.FromImage(bt))
+            using (GraphicsPath gp = new GraphicsPath())
+            {
+                g.SmoothingMode = SmoothingMode.AntiAlias;
+                gp.AddEllipse(0, 0, bitmap.Width, bitmap.Height);
+                g.Clear(Color.Magenta);
+                g.SetClip(gp);
+                g.DrawImage(bitmap, new Rectangle(0, 0, bitmap.Width, bitmap.Height), 0, 0, bitmap.Width, bitmap.Height, GraphicsUnit.Pixel);
+            }
+            bt.MakeTransparent(Color.Magenta);
+            return bt;
+        }
+        // ----------------------------------------------------
+        private void DrawProgressbar(Graphics gr, float value)
+        {
+            if (UnreachedWidth > 0)
+                DrawUnreachedProgress(gr, value == 0 ? 0.0001f : value, UnreachedWidth);
+            if (value > 0 && ReachedWidth > 0)
+                DrawReachedProgress(gr, value, ReachedWidth);
+            if (OutLineWidth > 0)
+                DrawOutLine(gr, OutLineWidth);
+        }
+        private void DrawUnreachedProgress(Graphics gr, float value, float width)
+        {
+            float startAngle = (value) * 6 - 90;
+            Pen pen = new Pen(UnreachedColor, width)
+            {
+                Alignment = PenAlignment.Inset,
+                EndCap = LineCap.Round,
+                StartCap = LineCap.Round
+            };
+            Rectangle rect = ClientRectangle;
+            float maxWidth = Math.Max(ReachedWidth, UnreachedWidth);
+            rect.Inflate(-(int)(maxWidth / 2 + 1), -(int)(maxWidth / 2 + 1));
+            gr.DrawArc(pen, rect, startAngle, 360 - (value * 6));
         }
         private void DrawReachedProgress(Graphics gr, float value, float width)
         {
             float sweepAngle = (value) * 6;
             Pen pen = new Pen(ReachedColor, width)
             {
-                Alignment = System.Drawing.Drawing2D.PenAlignment.Inset,
-                StartCap = System.Drawing.Drawing2D.LineCap.Round,
-                EndCap = System.Drawing.Drawing2D.LineCap.Round
+                Alignment = PenAlignment.Inset,
+                StartCap = LineCap.Round,
+                EndCap = LineCap.Round
             };
             Rectangle rect = ClientRectangle;
-            rect.Inflate(-(int)(width / 2 + 1), -(int)(width / 2 + 1));
+            float maxWidth = Math.Max(ReachedWidth, UnreachedWidth);
+            rect.Inflate(-(int)(maxWidth / 2 + 1), -(int)(maxWidth / 2 + 1));
             gr.DrawArc(pen, rect, 270, sweepAngle);
         }
-        private void DrawUnreachedProgress(Graphics gr, float value, float width)
+        private void DrawOutLine(Graphics gr, float width)
         {
-            float startAngle = (value) * 6 - 90;
-            Pen pen = new Pen(UnreachedColor, width) { Alignment = System.Drawing.Drawing2D.PenAlignment.Inset };
+            Pen pen = new Pen(OutLineColor, OutLineWidth)
+            {
+                Alignment = PenAlignment.Inset
+            };
             Rectangle rect = ClientRectangle;
-            rect.Inflate(-(int)(ReachedWidth / 2 + 1), -(int)(ReachedWidth / 2 + 1));
-            gr.DrawArc(pen, rect, startAngle, 360 - (value * 6));
+            int maxWidth = -(int)Math.Max(ReachedWidth, UnreachedWidth);
+            rect.Inflate(maxWidth, maxWidth);
+            gr.DrawEllipse(pen, rect);
+        }
+        private void DisposeObjects(params IDisposable[] objects)
+        {
+            for (int i = 0; i < objects.Length; i++)
+                objects[i].Dispose();
         }
 
         #endregion

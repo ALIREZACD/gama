@@ -126,6 +126,5 @@ F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources
 C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.frmAlter.resources
 =======
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.Clock.resources
-F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditSabtNamCourse.resources
-F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources
 >>>>>>> e9c354097eb02eb079ec6d8073e4ef163746a4f9
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.frmTest.resources

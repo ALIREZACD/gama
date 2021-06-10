@@ -58,6 +58,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\TextBoxRegexable.cs" />
     <Compile Include="Controls\Concreat\BtnSimpleBases.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -378,6 +379,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Signature.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="%28Doc%29\Classes\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -104,7 +104,9 @@
     <Compile Include="Controls\Single\DayItem.designer.cs">
       <DependentUpon>DayItem.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Single\frmAlter.cs" />
+    <Compile Include="Controls\Single\frmAlter.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Controls\Single\HorizontalListNavigator.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,11 +132,8 @@
     <Compile Include="Controls\Concreat\radiobutton.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Concreat\textBox.cs">
+    <Compile Include="Controls\Single\textBox.cs">
       <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Controls\Concreat\TxtSimpleBase.cs">
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="کارآموز\frmAddEditStudent.cs">
       <SubType>Form</SubType>

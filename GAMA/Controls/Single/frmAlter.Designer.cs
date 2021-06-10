@@ -1,4 +1,4 @@
-﻿namespace Test
+﻿namespace GAMA
 {
     partial class frmAlter
     {

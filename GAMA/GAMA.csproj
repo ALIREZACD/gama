@@ -58,6 +58,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controls\Concreat\BtnSimpleBases.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Concreat\Calendar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Classes\AutoDesigner.cs" />
     <Compile Include="Classes\ControlEdgeRounder.cs" />
     <Compile Include="Classes\FormDrager.cs" />
@@ -121,6 +127,15 @@
     <Compile Include="Classes\TransitionStrategy_Color.cs" />
     <Compile Include="Classes\TransitionStrategy_Double.cs" />
     <Compile Include="Classes\TransitionStrategy_Integer.cs" />
+    <Compile Include="Controls\Concreat\radiobutton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Concreat\textBox.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Controls\Concreat\TxtSimpleBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="کارآموز\frmAddEditStudent.cs">
       <SubType>Form</SubType>
     </Compile>

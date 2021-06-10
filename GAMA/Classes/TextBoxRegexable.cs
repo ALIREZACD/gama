@@ -34,13 +34,13 @@ namespace GAMA.Classes
 
         #region Fucntions
 
-        private void SetEvents(params Control[] controls)
+        public void SetEvents(params TextBoxBase[] controls)
         {
             for (int i = 0; i < controls.Length; i++)
                 controls[i].KeyPress += TextBox_KeyPress;
         }
 
-        private bool IsTextOnPattern(string text)
+        protected bool IsTextOnPattern(string text)
         {
             bool result = Regex.IsMatch(text, _regexPattern);
             return result;

@@ -104,21 +104,13 @@
     <Compile Include="Controls\Single\DayItem.designer.cs">
       <DependentUpon>DayItem.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <Compile Include="Controls\Single\frmAlter.cs">
-      <SubType>Form</SubType>
-    </Compile>
-=======
->>>>>>> 619e77e6772f0e882261126e5ab9fd504c56881e
     <Compile Include="Controls\Single\HorizontalListNavigator.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Controls\Single\HorizontalListNavigator.designer.cs">
       <DependentUpon>HorizontalListNavigator.cs</DependentUpon>
     </Compile>
-    <Compile Include="Dialogs\frmAlter.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Dialogs\frmAlter.cs" />
     <Compile Include="Dialogs\frmAlter.designer.cs">
       <DependentUpon>frmAlter.cs</DependentUpon>
     </Compile>
@@ -380,18 +372,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Signature.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Danger.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Info.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Success.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Warning.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

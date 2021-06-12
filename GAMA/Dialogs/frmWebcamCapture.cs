@@ -130,6 +130,8 @@ namespace MyClass
             timer1.Start();
         }
 
+        public static bool HasCamera() => new FilterInfoCollection(FilterCategory.VideoInputDevice).Count > 0;
+
         #endregion
     }
 }

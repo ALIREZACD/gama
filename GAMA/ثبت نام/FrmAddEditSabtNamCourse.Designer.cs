@@ -431,6 +431,7 @@ namespace GAMA
             this.btnTasvir.UseVisualStyleBackColor = false;
             this.btnTasvir.BackgroundImageChanged += new System.EventHandler(this.BtnPics_BackgroundImageChanged);
             this.btnTasvir.Click += new System.EventHandler(this.BtnTasvir_Click);
+            this.btnTasvir.Leave += new System.EventHandler(this.Photo_Leave);
             // 
             // btnEmza
             // 
@@ -460,6 +461,7 @@ namespace GAMA
             this.btnEmza.UseVisualStyleBackColor = false;
             this.btnEmza.BackgroundImageChanged += new System.EventHandler(this.BtnPics_BackgroundImageChanged);
             this.btnEmza.Click += new System.EventHandler(this.BtnEmza_Click);
+            this.btnEmza.Leave += new System.EventHandler(this.Photo_Leave);
             // 
             // mainCombo1
             // 
@@ -1306,6 +1308,7 @@ namespace GAMA
             this.asPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.asPhoto.IsExpanded = false;
             this.asPhoto.ItemBackColor = System.Drawing.Color.Cyan;
+            this.asPhoto.ItemFont = new System.Drawing.Font("Calibri", 8F);
             this.asPhoto.ItemForeColor = System.Drawing.Color.Black;
             this.asPhoto.ItemSize = new System.Drawing.Size(80, 50);
             this.asPhoto.Location = new System.Drawing.Point(0, 640);

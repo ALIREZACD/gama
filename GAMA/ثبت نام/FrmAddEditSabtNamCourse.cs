@@ -272,18 +272,8 @@ namespace GAMA
             btnTasvir.BackgroundImage = btnEmza.BackgroundImage = null;
             row = null;
         }
-        private void SelectImageFromFile()
+        private void Photo_Leave(object sender, EventArgs e)
         {
-            OpenFileDialog picexplorer = OpenFileDialogManager.Picture(false, "لطفا تصویر کارآموز را انتخاب کنید");
-            _clickedImageButton.BackgroundImage = OpenFileDialogManager.Picture(picexplorer);
-            if (asPhoto.IsExpanded)
-                asPhoto.Collapse();
-        }
-        private void SelectImageFromWebcam()
-        {
-            frmWebcamCapture webcam = new frmWebcamCapture();
-            if (webcam.ShowDialog() == DialogResult.OK)
-                _clickedImageButton.BackgroundImage = webcam.WebcamCapture;
             if (asPhoto.IsExpanded)
                 asPhoto.Collapse();
         }
@@ -358,6 +348,17 @@ namespace GAMA
         {
             asPhoto.AddItem((c, j) => SelectImageFromFile(), "از فایل");
             asPhoto.AddItem((c, j) => SelectImageFromWebcam(), "از وبکم");
+        }
+        private void SelectImageFromFile()
+        {
+            OpenFileDialog picexplorer = OpenFileDialogManager.Picture(false, "لطفا تصویر کارآموز را انتخاب کنید");
+            _clickedImageButton.BackgroundImage = OpenFileDialogManager.Picture(picexplorer);
+        }
+        private void SelectImageFromWebcam()
+        {
+            frmWebcamCapture webcam = new frmWebcamCapture();
+            if (webcam.ShowDialog() == DialogResult.OK)
+                _clickedImageButton.BackgroundImage = webcam.WebcamCapture;
         }
 
         #endregion

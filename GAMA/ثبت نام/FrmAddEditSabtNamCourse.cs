@@ -43,6 +43,12 @@ namespace GAMA
             if (!NationalCodeManager.IsValid(txtMeli.Text))
             {
                 MessageBox.Show("کد ملی معتبر نیست", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            if (!NationalCodeExsist(txtMeli.Text))
+            {
+                MessageBox.Show("کارآموزی با این کد ملی موجود نیست", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
             }
 
 
@@ -328,6 +334,10 @@ namespace GAMA
             Locations.AlignRights(panel1, lblTitle);
             Locations.AlignLefts(panel1, lblDate, pnlLoggedUser);
             txtDocument.AlignCenter(btnTasvir);
+        }
+        private bool NationalCodeExsist(string nationalCode)
+        {
+            return SqlServerClass.RowExists(TableNames.Student, $"nationalCode = {nationalCode}");
         }
 
         #endregion

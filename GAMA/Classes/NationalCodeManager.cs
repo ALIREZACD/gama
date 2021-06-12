@@ -19,7 +19,7 @@ namespace GAMA.Classes
                 sum += num * i;
             }
             int controlNum = nationalCode[9] - 48;
-            float divid = sum / 11F;
+            int divid = sum % 11;
             return (((divid < 2) && (controlNum == divid)) || ((divid >= 2) && ((11 - divid) == controlNum)));
         }
     }

@@ -486,9 +486,9 @@ namespace MyClass
                 SqlCommand cmd = new SqlCommand();
                 cmd.Connection = sq;
                 if (Condition == "")
-                    cmd.CommandText = "SELECT * FROM " + tableName;
+                    cmd.CommandText = "SELECT TOP 1 * FROM " + tableName;
                 else
-                    cmd.CommandText = "SELECT * FROM " + tableName + " WHERE (" + Condition + ")";
+                    cmd.CommandText = "SELECT TOP 1 * FROM " + tableName + " WHERE (" + Condition + ")";
                 SqlDataReader dr = cmd.ExecuteReader();
                 if (dr.Read())
                     yes_no = true;

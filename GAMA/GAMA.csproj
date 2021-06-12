@@ -49,6 +49,15 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AForge, Version=2.2.5.0, Culture=neutral, PublicKeyToken=c1db6ff4eaa06aeb, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.2.2.5\lib\AForge.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video, Version=2.2.5.0, Culture=neutral, PublicKeyToken=cbfb6e07d173c401, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.2.2.5\lib\AForge.Video.dll</HintPath>
+    </Reference>
+    <Reference Include="AForge.Video.DirectShow, Version=2.2.5.0, Culture=neutral, PublicKeyToken=61ea4348d43881b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\AForge.Video.DirectShow.2.2.5\lib\AForge.Video.DirectShow.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1449.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
     </Reference>
@@ -155,6 +164,12 @@
     </Compile>
     <Compile Include="Dialogs\frmDatePicker.designer.cs">
       <DependentUpon>frmDatePicker.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Dialogs\frmWebcamCapture.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\frmWebcamCapture.designer.cs">
+      <DependentUpon>frmWebcamCapture.cs</DependentUpon>
     </Compile>
     <Compile Include="frmPrintSabtnam.cs">
       <SubType>Form</SubType>
@@ -347,6 +362,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\frmDatePicker.resx">
       <DependentUpon>frmDatePicker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\frmWebcamCapture.resx">
+      <DependentUpon>frmWebcamCapture.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrintSabtnam.resx">
       <DependentUpon>frmPrintSabtnam.cs</DependentUpon>

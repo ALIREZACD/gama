@@ -90,4 +90,3 @@ F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.csproj.CopyComplete
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.exe
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.pdb
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.Controls.Single.ActionSelector.resources
-F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.Test.resources

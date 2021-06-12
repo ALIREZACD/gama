@@ -18,6 +18,7 @@ namespace GAMA
         {
             InitializeComponent();
             mood = m;
+            InitializeActionSelector();
         }
 
         //Variables****************************
@@ -27,6 +28,7 @@ namespace GAMA
         private readonly Moods mood;
         private DataGridViewRow row = null;
         private readonly string table = TableNames.SabtnamCourse;
+        private BtnSimple _clickedImageButton;
 
         #endregion
         //*************************************
@@ -205,15 +207,13 @@ namespace GAMA
         }
         private void BtnEmza_Click(object sender, EventArgs e)
         {
-            OpenFileDialog picexplorer = OpenFileDialogManager.Picture(false, "لطفا تصویر امضا را انتخاب کنید");
-
-            btnEmza.BackgroundImage = OpenFileDialogManager.Picture(picexplorer);
+            _clickedImageButton = sender as BtnSimple;
+            asPhoto.ToggleExpandState();
         }
         private void BtnTasvir_Click(object sender, EventArgs e)
         {
-            OpenFileDialog picexplorer = OpenFileDialogManager.Picture(false, "لطفا تصویر کارآموز را انتخاب کنید");
-
-            btnTasvir.BackgroundImage = OpenFileDialogManager.Picture(picexplorer);
+            _clickedImageButton = sender as BtnSimple;
+            asPhoto.ToggleExpandState();
         }
         private void FrmAddEditStudent_Load(object sender, EventArgs e)
         {
@@ -271,6 +271,13 @@ namespace GAMA
             ControlManager.ClearControls(this);
             btnTasvir.BackgroundImage = btnEmza.BackgroundImage = null;
             row = null;
+        }
+        private void SelectImageFromFile()
+        {
+            OpenFileDialog picexplorer = OpenFileDialogManager.Picture(false, "لطفا تصویر کارآموز را انتخاب کنید");
+            _clickedImageButton.BackgroundImage = OpenFileDialogManager.Picture(picexplorer);
+            if (asPhoto.IsExpanded)
+                asPhoto.Collapse();
         }
 
         #endregion
@@ -338,6 +345,10 @@ namespace GAMA
         private bool NationalCodeExsist(string nationalCode)
         {
             return SqlServerClass.RowExists(TableNames.Student, $"nationalCode = {nationalCode}");
+        }
+        private void InitializeActionSelector()
+        {
+            asPhoto.AddItem((c, j) => SelectImageFromFile(), "از فایل");
         }
 
         #endregion

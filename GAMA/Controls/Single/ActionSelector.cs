@@ -30,9 +30,10 @@ namespace GAMA.Controls.Single
         private System.Timers.Timer _timer = new System.Timers.Timer(30);
         private bool _isExpanded = false;
         private TransitionStep _transtion;
-        private Color _actionBackColor = Color.Cyan;
-        private Color _actionForeColor = Color.Black;
-        private Size _actionSize = new Size(100, 60);
+        private Color _itemBackColor = Color.Cyan;
+        private Color _itemForeColor = Color.Black;
+        private Size _itemSize = new Size(100, 60);
+        private Font _itemFont = new Font("Calibri", 8, FontStyle.Regular);
 
         #endregion
 
@@ -53,29 +54,38 @@ namespace GAMA.Controls.Single
         public int TransitionDelay { get; set; } = 200;
         public Color ItemBackColor
         {
-            get => _actionBackColor;
+            get => _itemBackColor;
             set
             {
-                _actionBackColor = value;
+                _itemBackColor = value;
                 InvokeAction(c => c.BackColor = value);
             }
         }
         public Color ItemForeColor
         {
-            get => _actionForeColor;
+            get => _itemForeColor;
             set
             {
-                _actionForeColor = value;
+                _itemForeColor = value;
                 InvokeAction(c => c.ForeColor = value);
             }
         }
         public Size ItemSize
         {
-            get => _actionSize;
+            get => _itemSize;
             set
             {
-                _actionSize = value;
+                _itemSize = value;
                 InvokeAction(c => c.Size = value);
+            }
+        }
+        public Font ItemFont
+        {
+            get => _itemFont;
+            set
+            {
+                _itemFont = value;
+                InvokeAction(c => c.Font = value);
             }
         }
 

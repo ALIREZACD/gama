@@ -100,6 +100,7 @@ namespace GAMA
             this.txtId = new GAMA.TxtSimple();
             this.mainlbl2 = new GAMA.LblSimple();
             this.txtDocument = new GAMA.TxtSimple();
+            this.asPhoto = new GAMA.Controls.Single.ActionSelector();
             this.pnlLoggedUser.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -121,7 +122,7 @@ namespace GAMA
             this.btnAdd.ForeColor = System.Drawing.Color.White;
             this.btnAdd.IsClicked = false;
             this.btnAdd.Location = new System.Drawing.Point(398, 659);
-            this.btnAdd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnAdd.Margin = new System.Windows.Forms.Padding(2);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.PareName = null;
             this.btnAdd.RowIndex = 0;
@@ -138,7 +139,7 @@ namespace GAMA
             this.txtLoggedUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtLoggedUser.ForeColor = System.Drawing.Color.Black;
             this.txtLoggedUser.Location = new System.Drawing.Point(0, 2);
-            this.txtLoggedUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLoggedUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtLoggedUser.Name = "txtLoggedUser";
             this.txtLoggedUser.PareName = null;
             this.txtLoggedUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -202,7 +203,7 @@ namespace GAMA
             this.pnlLoggedUser.Controls.Add(this.txtLoggedUser);
             this.pnlLoggedUser.Controls.Add(this.mainlbl26);
             this.pnlLoggedUser.Location = new System.Drawing.Point(54, 659);
-            this.pnlLoggedUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pnlLoggedUser.Margin = new System.Windows.Forms.Padding(2);
             this.pnlLoggedUser.Name = "pnlLoggedUser";
             this.pnlLoggedUser.PareName = null;
             this.pnlLoggedUser.RowIndex = 0;
@@ -280,7 +281,7 @@ namespace GAMA
             this.panel1.Controls.Add(this.txtId);
             this.panel1.Controls.Add(this.mainlbl2);
             this.panel1.Location = new System.Drawing.Point(30, 110);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.PareName = null;
             this.panel1.RowCount = 14;
@@ -297,7 +298,7 @@ namespace GAMA
             this.txtDescription.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtDescription.ForeColor = System.Drawing.Color.Black;
             this.txtDescription.Location = new System.Drawing.Point(24, 314);
-            this.txtDescription.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescription.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescription.Multiline = true;
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.PareName = null;
@@ -330,7 +331,7 @@ namespace GAMA
             this.txtSabtnamUser.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtSabtnamUser.ForeColor = System.Drawing.Color.Black;
             this.txtSabtnamUser.Location = new System.Drawing.Point(262, 462);
-            this.txtSabtnamUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSabtnamUser.Margin = new System.Windows.Forms.Padding(2);
             this.txtSabtnamUser.Name = "txtSabtnamUser";
             this.txtSabtnamUser.PareName = null;
             this.txtSabtnamUser.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -361,7 +362,7 @@ namespace GAMA
             this.txtSabtnamDate.ColumnIndex = 1;
             this.txtSabtnamDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtSabtnamDate.Location = new System.Drawing.Point(527, 466);
-            this.txtSabtnamDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSabtnamDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtSabtnamDate.Mask = "1000/00/00";
             this.txtSabtnamDate.Name = "txtSabtnamDate";
             this.txtSabtnamDate.PareName = null;
@@ -392,7 +393,7 @@ namespace GAMA
             this.txtBirthDate.ColumnIndex = 1;
             this.txtBirthDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtBirthDate.Location = new System.Drawing.Point(527, 166);
-            this.txtBirthDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBirthDate.Margin = new System.Windows.Forms.Padding(2);
             this.txtBirthDate.Mask = "1000/00/00";
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.PareName = null;
@@ -420,7 +421,7 @@ namespace GAMA
             this.btnTasvir.ImageList = this.imageList1;
             this.btnTasvir.IsClicked = false;
             this.btnTasvir.Location = new System.Drawing.Point(14, 24);
-            this.btnTasvir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTasvir.Margin = new System.Windows.Forms.Padding(2);
             this.btnTasvir.Name = "btnTasvir";
             this.btnTasvir.PareName = null;
             this.btnTasvir.RowIndex = 1;
@@ -449,7 +450,7 @@ namespace GAMA
             this.btnEmza.ImageList = this.imageList1;
             this.btnEmza.IsClicked = false;
             this.btnEmza.Location = new System.Drawing.Point(21, 171);
-            this.btnEmza.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEmza.Margin = new System.Windows.Forms.Padding(2);
             this.btnEmza.Name = "btnEmza";
             this.btnEmza.PareName = null;
             this.btnEmza.RowIndex = 2;
@@ -469,7 +470,7 @@ namespace GAMA
             this.mainCombo1.FormattingEnabled = true;
             this.mainCombo1.IntegralHeight = false;
             this.mainCombo1.Location = new System.Drawing.Point(527, 400);
-            this.mainCombo1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mainCombo1.Margin = new System.Windows.Forms.Padding(2);
             this.mainCombo1.Name = "mainCombo1";
             this.mainCombo1.PareName = null;
             this.mainCombo1.RowIndex = 12;
@@ -486,7 +487,7 @@ namespace GAMA
             "زن",
             "مرد"});
             this.comboGensiat.Location = new System.Drawing.Point(262, 89);
-            this.comboGensiat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboGensiat.Margin = new System.Windows.Forms.Padding(2);
             this.comboGensiat.Name = "comboGensiat";
             this.comboGensiat.PareName = null;
             this.comboGensiat.RowIndex = 3;
@@ -499,7 +500,7 @@ namespace GAMA
             this.txtCode.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtCode.ForeColor = System.Drawing.Color.Black;
             this.txtCode.Location = new System.Drawing.Point(262, 21);
-            this.txtCode.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCode.Margin = new System.Windows.Forms.Padding(2);
             this.txtCode.Name = "txtCode";
             this.txtCode.PareName = null;
             this.txtCode.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -535,7 +536,7 @@ namespace GAMA
             "مجرد",
             "متاهل"});
             this.comboTahol.Location = new System.Drawing.Point(527, 297);
-            this.comboTahol.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.comboTahol.Margin = new System.Windows.Forms.Padding(2);
             this.comboTahol.Name = "comboTahol";
             this.comboTahol.PareName = null;
             this.comboTahol.RowIndex = 9;
@@ -548,7 +549,7 @@ namespace GAMA
             this.txtShahrie.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtShahrie.ForeColor = System.Drawing.Color.Black;
             this.txtShahrie.Location = new System.Drawing.Point(262, 429);
-            this.txtShahrie.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtShahrie.Margin = new System.Windows.Forms.Padding(2);
             this.txtShahrie.Name = "txtShahrie";
             this.txtShahrie.PareName = null;
             this.txtShahrie.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -580,7 +581,7 @@ namespace GAMA
             this.txtVaghtAzad.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtVaghtAzad.ForeColor = System.Drawing.Color.Black;
             this.txtVaghtAzad.Location = new System.Drawing.Point(262, 396);
-            this.txtVaghtAzad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtVaghtAzad.Margin = new System.Windows.Forms.Padding(2);
             this.txtVaghtAzad.Name = "txtVaghtAzad";
             this.txtVaghtAzad.PareName = null;
             this.txtVaghtAzad.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -612,7 +613,7 @@ namespace GAMA
             this.txtNoeClass.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtNoeClass.ForeColor = System.Drawing.Color.Black;
             this.txtNoeClass.Location = new System.Drawing.Point(527, 432);
-            this.txtNoeClass.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNoeClass.Margin = new System.Windows.Forms.Padding(2);
             this.txtNoeClass.Name = "txtNoeClass";
             this.txtNoeClass.PareName = null;
             this.txtNoeClass.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -644,7 +645,7 @@ namespace GAMA
             this.txtNahveMoarefi.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtNahveMoarefi.ForeColor = System.Drawing.Color.Black;
             this.txtNahveMoarefi.Location = new System.Drawing.Point(262, 323);
-            this.txtNahveMoarefi.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNahveMoarefi.Margin = new System.Windows.Forms.Padding(2);
             this.txtNahveMoarefi.Name = "txtNahveMoarefi";
             this.txtNahveMoarefi.PareName = null;
             this.txtNahveMoarefi.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -692,7 +693,7 @@ namespace GAMA
             this.txtAdres.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtAdres.ForeColor = System.Drawing.Color.Black;
             this.txtAdres.Location = new System.Drawing.Point(527, 366);
-            this.txtAdres.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtAdres.Margin = new System.Windows.Forms.Padding(2);
             this.txtAdres.Name = "txtAdres";
             this.txtAdres.PareName = null;
             this.txtAdres.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -740,7 +741,7 @@ namespace GAMA
             this.txtCodePosty.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtCodePosty.ForeColor = System.Drawing.Color.Black;
             this.txtCodePosty.Location = new System.Drawing.Point(527, 332);
-            this.txtCodePosty.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCodePosty.Margin = new System.Windows.Forms.Padding(2);
             this.txtCodePosty.Name = "txtCodePosty";
             this.txtCodePosty.PareName = null;
             this.txtCodePosty.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -788,7 +789,7 @@ namespace GAMA
             this.txtShoghl.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtShoghl.ForeColor = System.Drawing.Color.Black;
             this.txtShoghl.Location = new System.Drawing.Point(262, 156);
-            this.txtShoghl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtShoghl.Margin = new System.Windows.Forms.Padding(2);
             this.txtShoghl.Name = "txtShoghl";
             this.txtShoghl.PareName = null;
             this.txtShoghl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -820,7 +821,7 @@ namespace GAMA
             this.txtTelegram.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtTelegram.ForeColor = System.Drawing.Color.Black;
             this.txtTelegram.Location = new System.Drawing.Point(527, 232);
-            this.txtTelegram.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelegram.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelegram.Name = "txtTelegram";
             this.txtTelegram.PareName = null;
             this.txtTelegram.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -852,7 +853,7 @@ namespace GAMA
             this.txtTelephone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtTelephone.ForeColor = System.Drawing.Color.Black;
             this.txtTelephone.Location = new System.Drawing.Point(262, 189);
-            this.txtTelephone.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelephone.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelephone.Name = "txtTelephone";
             this.txtTelephone.PareName = null;
             this.txtTelephone.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -932,7 +933,7 @@ namespace GAMA
             this.txtShomareShenasname.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtShomareShenasname.ForeColor = System.Drawing.Color.Black;
             this.txtShomareShenasname.Location = new System.Drawing.Point(527, 99);
-            this.txtShomareShenasname.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtShomareShenasname.Margin = new System.Windows.Forms.Padding(2);
             this.txtShomareShenasname.Name = "txtShomareShenasname";
             this.txtShomareShenasname.PareName = " ";
             this.txtShomareShenasname.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -964,7 +965,7 @@ namespace GAMA
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtEmail.ForeColor = System.Drawing.Color.Black;
             this.txtEmail.Location = new System.Drawing.Point(262, 289);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PareName = null;
             this.txtEmail.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -996,7 +997,7 @@ namespace GAMA
             this.txtMother.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtMother.ForeColor = System.Drawing.Color.Black;
             this.txtMother.Location = new System.Drawing.Point(527, 266);
-            this.txtMother.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMother.Margin = new System.Windows.Forms.Padding(2);
             this.txtMother.Name = "txtMother";
             this.txtMother.PareName = null;
             this.txtMother.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1028,7 +1029,7 @@ namespace GAMA
             this.txtTahsilat.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtTahsilat.ForeColor = System.Drawing.Color.Black;
             this.txtTahsilat.Location = new System.Drawing.Point(527, 199);
-            this.txtTahsilat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTahsilat.Margin = new System.Windows.Forms.Padding(2);
             this.txtTahsilat.Name = "txtTahsilat";
             this.txtTahsilat.PareName = null;
             this.txtTahsilat.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1060,7 +1061,7 @@ namespace GAMA
             this.txtMobile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtMobile.ForeColor = System.Drawing.Color.Black;
             this.txtMobile.Location = new System.Drawing.Point(262, 223);
-            this.txtMobile.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMobile.Margin = new System.Windows.Forms.Padding(2);
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.PareName = null;
             this.txtMobile.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1092,7 +1093,7 @@ namespace GAMA
             this.txtMahalSodor.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtMahalSodor.ForeColor = System.Drawing.Color.Black;
             this.txtMahalSodor.Location = new System.Drawing.Point(527, 132);
-            this.txtMahalSodor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMahalSodor.Margin = new System.Windows.Forms.Padding(2);
             this.txtMahalSodor.Name = "txtMahalSodor";
             this.txtMahalSodor.PareName = null;
             this.txtMahalSodor.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1108,7 +1109,7 @@ namespace GAMA
             this.txtPedar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtPedar.ForeColor = System.Drawing.Color.Black;
             this.txtPedar.Location = new System.Drawing.Point(262, 256);
-            this.txtPedar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtPedar.Margin = new System.Windows.Forms.Padding(2);
             this.txtPedar.Name = "txtPedar";
             this.txtPedar.PareName = null;
             this.txtPedar.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1156,7 +1157,7 @@ namespace GAMA
             this.txtMeli.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtMeli.ForeColor = System.Drawing.Color.Black;
             this.txtMeli.Location = new System.Drawing.Point(262, 123);
-            this.txtMeli.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMeli.Margin = new System.Windows.Forms.Padding(2);
             this.txtMeli.Name = "txtMeli";
             this.txtMeli.PareName = null;
             this.txtMeli.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1188,7 +1189,7 @@ namespace GAMA
             this.txtLName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtLName.ForeColor = System.Drawing.Color.Black;
             this.txtLName.Location = new System.Drawing.Point(262, 56);
-            this.txtLName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtLName.Margin = new System.Windows.Forms.Padding(2);
             this.txtLName.Name = "txtLName";
             this.txtLName.PareName = null;
             this.txtLName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1220,7 +1221,7 @@ namespace GAMA
             this.txtName.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtName.ForeColor = System.Drawing.Color.Black;
             this.txtName.Location = new System.Drawing.Point(527, 66);
-            this.txtName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtName.Margin = new System.Windows.Forms.Padding(2);
             this.txtName.Name = "txtName";
             this.txtName.PareName = null;
             this.txtName.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1252,7 +1253,7 @@ namespace GAMA
             this.txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.txtId.ForeColor = System.Drawing.Color.Black;
             this.txtId.Location = new System.Drawing.Point(527, 24);
-            this.txtId.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtId.Margin = new System.Windows.Forms.Padding(2);
             this.txtId.Name = "txtId";
             this.txtId.PareName = null;
             this.txtId.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -1285,7 +1286,7 @@ namespace GAMA
             this.txtDocument.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(178)));
             this.txtDocument.ForeColor = System.Drawing.Color.Black;
             this.txtDocument.Location = new System.Drawing.Point(511, 645);
-            this.txtDocument.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDocument.Margin = new System.Windows.Forms.Padding(2);
             this.txtDocument.Multiline = true;
             this.txtDocument.Name = "txtDocument";
             this.txtDocument.PareName = null;
@@ -1297,11 +1298,28 @@ namespace GAMA
             this.txtDocument.Tag = "";
             this.txtDocument.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
+            // asPhoto
+            // 
+            this.asPhoto.BackColor = System.Drawing.Color.Gainsboro;
+            this.asPhoto.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.asPhoto.FlowDirection = System.Windows.Forms.FlowDirection.RightToLeft;
+            this.asPhoto.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.asPhoto.IsExpanded = false;
+            this.asPhoto.ItemBackColor = System.Drawing.Color.Cyan;
+            this.asPhoto.ItemForeColor = System.Drawing.Color.Black;
+            this.asPhoto.ItemSize = new System.Drawing.Size(80, 50);
+            this.asPhoto.Location = new System.Drawing.Point(0, 640);
+            this.asPhoto.Name = "asPhoto";
+            this.asPhoto.Size = new System.Drawing.Size(868, 0);
+            this.asPhoto.TabIndex = 127;
+            this.asPhoto.TransitionDelay = 200;
+            // 
             // FrmAddEditSabtNamCourse
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(868, 640);
+            this.Controls.Add(this.asPhoto);
             this.Controls.Add(this.txtDocument);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.pnlLoggedUser);
@@ -1312,7 +1330,7 @@ namespace GAMA
             this.HasHeader = true;
             this.HeaderforeColor = System.Drawing.Color.White;
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmAddEditSabtNamCourse";
             this.Text = "کارآموز";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmAddEditStudent_FormClosed);
@@ -1324,6 +1342,7 @@ namespace GAMA
             this.Controls.SetChildIndex(this.pnlLoggedUser, 0);
             this.Controls.SetChildIndex(this.panel1, 0);
             this.Controls.SetChildIndex(this.txtDocument, 0);
+            this.Controls.SetChildIndex(this.asPhoto, 0);
             this.pnlLoggedUser.ResumeLayout(false);
             this.pnlLoggedUser.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1403,5 +1422,6 @@ namespace GAMA
         private LblSimple lblSimple1;
         private TxtSimple txtDescription;
         private LblSimple lblSimple3;
+        private Controls.Single.ActionSelector asPhoto;
     }
 }

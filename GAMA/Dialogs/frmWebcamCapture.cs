@@ -52,19 +52,11 @@ namespace MyClass
 
         private void FrmWebcamCapture_Load(object sender, EventArgs e)
         {
-            System.Drawing.Drawing2D.GraphicsPath path = new System.Drawing.Drawing2D.GraphicsPath();
-            path.AddEllipse(picWebcam.DisplayRectangle);
-            picWebcam.Region = new Region(path);
-
             _webcams = new FilterInfoCollection(FilterCategory.VideoInputDevice);
             cmbCameras.DataSource = _webcams;
             cmbCameras.DisplayMember = "Name";
             if (cmbCameras.Items.Count > 0)
             cmbCameras.SelectedIndex = 0;
-
-            Image temp = Image.FromFile("NoImage.png");
-            picWebcam.Image = new Bitmap(temp);
-            temp.Dispose();
         }
 
         private void BtnStart_Click(object sender, EventArgs e)

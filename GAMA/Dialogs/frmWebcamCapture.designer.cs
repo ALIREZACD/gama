@@ -67,7 +67,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(380, 49);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(172, 19);
@@ -121,11 +121,13 @@
             // picWebcam
             // 
             this.picWebcam.ColumnIndex = 0;
-            this.picWebcam.Location = new System.Drawing.Point(12, 49);
+            this.picWebcam.Image = global::GAMA.Properties.Resources.Webcam;
+            this.picWebcam.Location = new System.Drawing.Point(7, 32);
             this.picWebcam.Name = "picWebcam";
             this.picWebcam.PareName = null;
             this.picWebcam.RowIndex = 0;
-            this.picWebcam.Size = new System.Drawing.Size(345, 319);
+            this.picWebcam.Size = new System.Drawing.Size(345, 341);
+            this.picWebcam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWebcam.TabIndex = 8;
             this.picWebcam.TabStop = false;
             // 
@@ -133,7 +135,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.MidnightBlue;
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
             this.ClientSize = new System.Drawing.Size(564, 380);
             this.Controls.Add(this.picWebcam);
             this.Controls.Add(this.lblError);

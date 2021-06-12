@@ -279,6 +279,14 @@ namespace GAMA
             if (asPhoto.IsExpanded)
                 asPhoto.Collapse();
         }
+        private void SelectImageFromWebcam()
+        {
+            frmWebcamCapture webcam = new frmWebcamCapture();
+            if (webcam.ShowDialog() == DialogResult.OK)
+                _clickedImageButton.BackgroundImage = webcam.WebcamCapture;
+            if (asPhoto.IsExpanded)
+                asPhoto.Collapse();
+        }
 
         #endregion
         //*************************************
@@ -349,6 +357,7 @@ namespace GAMA
         private void InitializeActionSelector()
         {
             asPhoto.AddItem((c, j) => SelectImageFromFile(), "از فایل");
+            asPhoto.AddItem((c, j) => SelectImageFromWebcam(), "از وبکم");
         }
 
         #endregion

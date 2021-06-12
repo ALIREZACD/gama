@@ -43,6 +43,7 @@ namespace GAMA
             }
         }
         #endregion
+
         #region mtehod
         private void Button_Resize(object sender, EventArgs e)
         {
@@ -112,6 +113,7 @@ namespace GAMA
             }
         }
         #endregion
+
         #region ctor
         public BtnSimple()
         {

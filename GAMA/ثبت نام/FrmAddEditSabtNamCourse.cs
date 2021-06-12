@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using MyClass;
 using System.Collections;
+using GAMA.Classes;
 
 namespace GAMA
 {
@@ -39,6 +40,11 @@ namespace GAMA
             {
                 return;
             }
+            if (!NationalCodeManager.IsValid(txtMeli.Text))
+            {
+                MessageBox.Show("کد ملی معتبر نیست", "خطا", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
 
             string idDore = SqlCaptureManager.GetField(TableNames.Course, "id", string.Format("courseName = N'{0}'", mainCombo1.SelectedItem));
 

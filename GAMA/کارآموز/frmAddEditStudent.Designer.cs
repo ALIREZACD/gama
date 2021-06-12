@@ -32,6 +32,9 @@ namespace GAMA
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAddEditStudent));
             this.pnlAutoDesign1 = new GAMA.PnlAutoDesign();
+            this.btnSimple1 = new GAMA.BtnSimple();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.btnTasvir = new GAMA.BtnSimple();
             this.picBirthDate = new System.Windows.Forms.PictureBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.rdbGenderWoman = new System.Windows.Forms.RadioButton();
@@ -76,9 +79,6 @@ namespace GAMA
             this.txtFName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.btnAdd = new GAMA.BtnSimple();
-            this.btnTasvir = new GAMA.BtnSimple();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.btnSimple1 = new GAMA.BtnSimple();
             this.pnlAutoDesign1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picBirthDate)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
@@ -133,7 +133,7 @@ namespace GAMA
             this.pnlAutoDesign1.Controls.Add(this.label1);
             this.pnlAutoDesign1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pnlAutoDesign1.Location = new System.Drawing.Point(9, 39);
-            this.pnlAutoDesign1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pnlAutoDesign1.Margin = new System.Windows.Forms.Padding(4);
             this.pnlAutoDesign1.Name = "pnlAutoDesign1";
             this.pnlAutoDesign1.PareName = null;
             this.pnlAutoDesign1.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -145,11 +145,59 @@ namespace GAMA
             this.pnlAutoDesign1.XSpace = 25;
             this.pnlAutoDesign1.YSpace = 5;
             // 
+            // btnSimple1
+            // 
+            this.btnSimple1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnSimple1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSimple1.ColumnIndex = 3;
+            this.btnSimple1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSimple1.FlatAppearance.BorderSize = 0;
+            this.btnSimple1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSimple1.Font = new System.Drawing.Font("B Nazanin", 13F);
+            this.btnSimple1.ForeColor = System.Drawing.Color.White;
+            this.btnSimple1.ImageIndex = 0;
+            this.btnSimple1.ImageList = this.imageList1;
+            this.btnSimple1.IsClicked = false;
+            this.btnSimple1.Location = new System.Drawing.Point(21, 168);
+            this.btnSimple1.Name = "btnSimple1";
+            this.btnSimple1.PareName = null;
+            this.btnSimple1.RowIndex = 1;
+            this.btnSimple1.Size = new System.Drawing.Size(150, 150);
+            this.btnSimple1.TabIndex = 128;
+            this.btnSimple1.UseVisualStyleBackColor = false;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "add.png");
+            // 
+            // btnTasvir
+            // 
+            this.btnTasvir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
+            this.btnTasvir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnTasvir.ColumnIndex = 3;
+            this.btnTasvir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnTasvir.FlatAppearance.BorderSize = 0;
+            this.btnTasvir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTasvir.Font = new System.Drawing.Font("B Nazanin", 13F);
+            this.btnTasvir.ForeColor = System.Drawing.Color.White;
+            this.btnTasvir.ImageIndex = 0;
+            this.btnTasvir.ImageList = this.imageList1;
+            this.btnTasvir.IsClicked = false;
+            this.btnTasvir.Location = new System.Drawing.Point(21, 12);
+            this.btnTasvir.Name = "btnTasvir";
+            this.btnTasvir.PareName = null;
+            this.btnTasvir.RowIndex = 1;
+            this.btnTasvir.Size = new System.Drawing.Size(150, 150);
+            this.btnTasvir.TabIndex = 127;
+            this.btnTasvir.UseVisualStyleBackColor = false;
+            // 
             // picBirthDate
             // 
             this.picBirthDate.Image = global::GAMA.Properties.Resources.DatePicker;
             this.picBirthDate.Location = new System.Drawing.Point(650, 282);
-            this.picBirthDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.picBirthDate.Margin = new System.Windows.Forms.Padding(4);
             this.picBirthDate.Name = "picBirthDate";
             this.picBirthDate.Size = new System.Drawing.Size(37, 30);
             this.picBirthDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -163,7 +211,7 @@ namespace GAMA
             this.flowLayoutPanel1.Controls.Add(this.rdbGenderMan);
             this.flowLayoutPanel1.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.flowLayoutPanel1.Location = new System.Drawing.Point(509, 172);
-            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
             this.flowLayoutPanel1.Size = new System.Drawing.Size(179, 30);
             this.flowLayoutPanel1.TabIndex = 4;
@@ -172,7 +220,7 @@ namespace GAMA
             // 
             this.rdbGenderWoman.AutoSize = true;
             this.rdbGenderWoman.Location = new System.Drawing.Point(126, 4);
-            this.rdbGenderWoman.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbGenderWoman.Margin = new System.Windows.Forms.Padding(4);
             this.rdbGenderWoman.Name = "rdbGenderWoman";
             this.rdbGenderWoman.Size = new System.Drawing.Size(49, 32);
             this.rdbGenderWoman.TabIndex = 0;
@@ -184,7 +232,7 @@ namespace GAMA
             // 
             this.rdbGenderMan.AutoSize = true;
             this.rdbGenderMan.Location = new System.Drawing.Point(65, 4);
-            this.rdbGenderMan.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbGenderMan.Margin = new System.Windows.Forms.Padding(4);
             this.rdbGenderMan.Name = "rdbGenderMan";
             this.rdbGenderMan.Size = new System.Drawing.Size(53, 32);
             this.rdbGenderMan.TabIndex = 1;
@@ -196,7 +244,7 @@ namespace GAMA
             // 
             this.txtPostalCode.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtPostalCode.Location = new System.Drawing.Point(509, 465);
-            this.txtPostalCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtPostalCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtPostalCode.MaxLength = 10;
             this.txtPostalCode.Name = "txtPostalCode";
             this.txtPostalCode.Size = new System.Drawing.Size(177, 35);
@@ -209,7 +257,7 @@ namespace GAMA
             this.flowLayoutPanel2.Controls.Add(this.rdbMarriedNo);
             this.flowLayoutPanel2.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.flowLayoutPanel2.Location = new System.Drawing.Point(509, 210);
-            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.flowLayoutPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
             this.flowLayoutPanel2.Size = new System.Drawing.Size(179, 30);
             this.flowLayoutPanel2.TabIndex = 5;
@@ -218,7 +266,7 @@ namespace GAMA
             // 
             this.rdbMarriedYes.AutoSize = true;
             this.rdbMarriedYes.Location = new System.Drawing.Point(127, 4);
-            this.rdbMarriedYes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbMarriedYes.Margin = new System.Windows.Forms.Padding(4);
             this.rdbMarriedYes.Name = "rdbMarriedYes";
             this.rdbMarriedYes.Size = new System.Drawing.Size(48, 32);
             this.rdbMarriedYes.TabIndex = 0;
@@ -230,7 +278,7 @@ namespace GAMA
             // 
             this.rdbMarriedNo.AutoSize = true;
             this.rdbMarriedNo.Location = new System.Drawing.Point(63, 4);
-            this.rdbMarriedNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.rdbMarriedNo.Margin = new System.Windows.Forms.Padding(4);
             this.rdbMarriedNo.Name = "rdbMarriedNo";
             this.rdbMarriedNo.Size = new System.Drawing.Size(56, 32);
             this.rdbMarriedNo.TabIndex = 1;
@@ -253,7 +301,7 @@ namespace GAMA
             // 
             this.txtFather.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtFather.Location = new System.Drawing.Point(509, 319);
-            this.txtFather.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFather.Margin = new System.Windows.Forms.Padding(4);
             this.txtFather.MaxLength = 50;
             this.txtFather.Name = "txtFather";
             this.txtFather.Size = new System.Drawing.Size(177, 35);
@@ -275,7 +323,7 @@ namespace GAMA
             // 
             this.txtEmail.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtEmail.Location = new System.Drawing.Point(31, 445);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.MaxLength = 100;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(177, 35);
@@ -286,7 +334,7 @@ namespace GAMA
             // 
             this.txtBirthDate.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtBirthDate.Location = new System.Drawing.Point(509, 282);
-            this.txtBirthDate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBirthDate.Margin = new System.Windows.Forms.Padding(4);
             this.txtBirthDate.MaxLength = 10;
             this.txtBirthDate.Name = "txtBirthDate";
             this.txtBirthDate.Size = new System.Drawing.Size(140, 35);
@@ -319,7 +367,7 @@ namespace GAMA
             // 
             this.txtAddress.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtAddress.Location = new System.Drawing.Point(31, 482);
-            this.txtAddress.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAddress.Margin = new System.Windows.Forms.Padding(4);
             this.txtAddress.MaxLength = 200;
             this.txtAddress.Multiline = true;
             this.txtAddress.Name = "txtAddress";
@@ -331,7 +379,7 @@ namespace GAMA
             // 
             this.txtIssuePlace.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtIssuePlace.Location = new System.Drawing.Point(509, 246);
-            this.txtIssuePlace.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtIssuePlace.Margin = new System.Windows.Forms.Padding(4);
             this.txtIssuePlace.MaxLength = 50;
             this.txtIssuePlace.Name = "txtIssuePlace";
             this.txtIssuePlace.Size = new System.Drawing.Size(177, 35);
@@ -364,7 +412,7 @@ namespace GAMA
             // 
             this.txtStudentJob.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtStudentJob.Location = new System.Drawing.Point(29, 408);
-            this.txtStudentJob.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtStudentJob.Margin = new System.Windows.Forms.Padding(4);
             this.txtStudentJob.Name = "txtStudentJob";
             this.txtStudentJob.Size = new System.Drawing.Size(177, 35);
             this.txtStudentJob.TabIndex = 17;
@@ -396,7 +444,7 @@ namespace GAMA
             // 
             this.txtTelegramID.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtTelegramID.Location = new System.Drawing.Point(29, 371);
-            this.txtTelegramID.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTelegramID.Margin = new System.Windows.Forms.Padding(4);
             this.txtTelegramID.MaxLength = 50;
             this.txtTelegramID.Name = "txtTelegramID";
             this.txtTelegramID.Size = new System.Drawing.Size(177, 35);
@@ -429,7 +477,7 @@ namespace GAMA
             // 
             this.txtMobile.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtMobile.Location = new System.Drawing.Point(29, 334);
-            this.txtMobile.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMobile.Margin = new System.Windows.Forms.Padding(4);
             this.txtMobile.MaxLength = 50;
             this.txtMobile.Name = "txtMobile";
             this.txtMobile.Size = new System.Drawing.Size(177, 35);
@@ -473,7 +521,7 @@ namespace GAMA
             // 
             this.txtNCode.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtNCode.Location = new System.Drawing.Point(509, 135);
-            this.txtNCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtNCode.MaxLength = 10;
             this.txtNCode.Name = "txtNCode";
             this.txtNCode.Size = new System.Drawing.Size(177, 35);
@@ -484,7 +532,7 @@ namespace GAMA
             // 
             this.txtTell.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtTell.Location = new System.Drawing.Point(509, 428);
-            this.txtTell.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTell.Margin = new System.Windows.Forms.Padding(4);
             this.txtTell.MaxLength = 50;
             this.txtTell.Name = "txtTell";
             this.txtTell.Size = new System.Drawing.Size(177, 35);
@@ -517,7 +565,7 @@ namespace GAMA
             // 
             this.txtNationalCode.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtNationalCode.Location = new System.Drawing.Point(509, 98);
-            this.txtNationalCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNationalCode.Margin = new System.Windows.Forms.Padding(4);
             this.txtNationalCode.MaxLength = 10;
             this.txtNationalCode.Name = "txtNationalCode";
             this.txtNationalCode.Size = new System.Drawing.Size(177, 35);
@@ -550,7 +598,7 @@ namespace GAMA
             // 
             this.txtLName.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtLName.Location = new System.Drawing.Point(509, 61);
-            this.txtLName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtLName.Margin = new System.Windows.Forms.Padding(4);
             this.txtLName.MaxLength = 50;
             this.txtLName.Name = "txtLName";
             this.txtLName.Size = new System.Drawing.Size(177, 35);
@@ -561,7 +609,7 @@ namespace GAMA
             // 
             this.txtEducation.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtEducation.Location = new System.Drawing.Point(509, 393);
-            this.txtEducation.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtEducation.Margin = new System.Windows.Forms.Padding(4);
             this.txtEducation.MaxLength = 50;
             this.txtEducation.Name = "txtEducation";
             this.txtEducation.Size = new System.Drawing.Size(177, 35);
@@ -572,7 +620,7 @@ namespace GAMA
             // 
             this.txtMother.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtMother.Location = new System.Drawing.Point(509, 356);
-            this.txtMother.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMother.Margin = new System.Windows.Forms.Padding(4);
             this.txtMother.MaxLength = 50;
             this.txtMother.Name = "txtMother";
             this.txtMother.Size = new System.Drawing.Size(177, 35);
@@ -605,7 +653,7 @@ namespace GAMA
             // 
             this.txtFName.Font = new System.Drawing.Font("B Nazanin", 11F);
             this.txtFName.Location = new System.Drawing.Point(509, 24);
-            this.txtFName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtFName.Margin = new System.Windows.Forms.Padding(4);
             this.txtFName.MaxLength = 50;
             this.txtFName.Name = "txtFName";
             this.txtFName.Size = new System.Drawing.Size(177, 35);
@@ -646,63 +694,15 @@ namespace GAMA
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.BtnAdd_Click);
             // 
-            // btnTasvir
-            // 
-            this.btnTasvir.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.btnTasvir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnTasvir.ColumnIndex = 3;
-            this.btnTasvir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnTasvir.FlatAppearance.BorderSize = 0;
-            this.btnTasvir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTasvir.Font = new System.Drawing.Font("B Nazanin", 13F);
-            this.btnTasvir.ForeColor = System.Drawing.Color.White;
-            this.btnTasvir.ImageIndex = 0;
-            this.btnTasvir.ImageList = this.imageList1;
-            this.btnTasvir.IsClicked = false;
-            this.btnTasvir.Location = new System.Drawing.Point(21, 12);
-            this.btnTasvir.Name = "btnTasvir";
-            this.btnTasvir.PareName = null;
-            this.btnTasvir.RowIndex = 1;
-            this.btnTasvir.Size = new System.Drawing.Size(150, 150);
-            this.btnTasvir.TabIndex = 127;
-            this.btnTasvir.UseVisualStyleBackColor = false;
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "add.png");
-            // 
-            // btnSimple1
-            // 
-            this.btnSimple1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(225)))), ((int)(((byte)(225)))), ((int)(((byte)(225)))));
-            this.btnSimple1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSimple1.ColumnIndex = 3;
-            this.btnSimple1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSimple1.FlatAppearance.BorderSize = 0;
-            this.btnSimple1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSimple1.Font = new System.Drawing.Font("B Nazanin", 13F);
-            this.btnSimple1.ForeColor = System.Drawing.Color.White;
-            this.btnSimple1.ImageIndex = 0;
-            this.btnSimple1.ImageList = this.imageList1;
-            this.btnSimple1.IsClicked = false;
-            this.btnSimple1.Location = new System.Drawing.Point(21, 168);
-            this.btnSimple1.Name = "btnSimple1";
-            this.btnSimple1.PareName = null;
-            this.btnSimple1.RowIndex = 1;
-            this.btnSimple1.Size = new System.Drawing.Size(150, 150);
-            this.btnSimple1.TabIndex = 128;
-            this.btnSimple1.UseVisualStyleBackColor = false;
-            // 
             // FrmAddEditStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(945, 693);
+            this.ClientSize = new System.Drawing.Size(945, 695);
             this.Controls.Add(this.pnlAutoDesign1);
             this.Controls.Add(this.btnAdd);
             this.Location = new System.Drawing.Point(0, 0);
-            this.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "FrmAddEditStudent";
             this.Text = "frmAddEditStudent";
             this.Controls.SetChildIndex(this.btnAdd, 0);

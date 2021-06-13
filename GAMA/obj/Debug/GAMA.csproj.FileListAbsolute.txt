@@ -89,6 +89,7 @@ F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.csproj.CoreCompileInputs.cache
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.csproj.CopyComplete
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.exe
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.pdb
+<<<<<<< HEAD
 F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.Controls.Single.ActionSelector.resources
 F:\project\GAMA\gama\GAMA\bin\Debug\AForge.dll
 F:\project\GAMA\gama\GAMA\bin\Debug\AForge.Video.DirectShow.dll
@@ -97,3 +98,21 @@ F:\project\GAMA\gama\GAMA\bin\Debug\AForge.xml
 F:\project\GAMA\gama\GAMA\bin\Debug\AForge.Video.xml
 F:\project\GAMA\gama\GAMA\bin\Debug\AForge.Video.DirectShow.xml
 F:\project\GAMA\gama\GAMA\obj\Debug\MyClass.frmWebcamCapture.resources
+=======
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditStudent.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.DayItem.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.HorizontalListNavigator.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmDatePicker.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditStudent.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditSabtNamCourse.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources
+<<<<<<< HEAD
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.frmAlter.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditSabtNamCourse.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.frmAlter.resources
+=======
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.Clock.resources
+>>>>>>> e9c354097eb02eb079ec6d8073e4ef163746a4f9
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.frmTest.resources
+>>>>>>> 03069184c49804940fa10cd9ff82360322387148

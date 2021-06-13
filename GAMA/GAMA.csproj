@@ -88,7 +88,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Compile Include="Classes\NationalCodeManager.cs" />
+=======
+    <Compile Include="Classes\TextBoxRegexable.cs" />
+>>>>>>> 03069184c49804940fa10cd9ff82360322387148
     <Compile Include="Controls\Concreat\BtnSimpleBases.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -444,6 +448,7 @@
     <None Include="Resources\Signature.png" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <None Include="Resources\Webcam.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
@@ -465,6 +470,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+=======
+    <Folder Include="%28Doc%29\Classes\" />
+>>>>>>> 03069184c49804940fa10cd9ff82360322387148
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

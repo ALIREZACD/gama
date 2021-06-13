@@ -1,0 +1,131 @@
+C:\Users\PC1\Desktop\GAMA\GAMA\bin\Debug\GAMA.exe
+C:\Users\PC1\Desktop\GAMA\GAMA\bin\Debug\GAMA.pdb
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.frmMain.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.Properties.Resources.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.csproj.GenerateResource.Cache
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.exe
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.pdb
+D:\GAMA\GAMA\bin\Debug\GAMA.exe
+D:\GAMA\GAMA\bin\Debug\GAMA.pdb
+D:\GAMA\GAMA\obj\Debug\GAMA.frmMain.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.Properties.Resources.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.csproj.GenerateResource.cache
+D:\GAMA\GAMA\obj\Debug\GAMA.csproj.CoreCompileInputs.cache
+D:\GAMA\GAMA\obj\Debug\GAMA.exe
+D:\GAMA\GAMA\obj\Debug\GAMA.pdb
+D:\Projects\Programming\Gama\GAMA\GAMA\bin\Debug\GAMA.exe
+D:\Projects\Programming\Gama\GAMA\GAMA\bin\Debug\GAMA.pdb
+D:\Projects\Programming\Gama\GAMA\GAMA\obj\Debug\GAMA.csprojAssemblyReference.cache
+D:\Projects\Programming\Gama\GAMA\GAMA\obj\Debug\GAMA.frmMain.resources
+D:\Projects\Programming\Gama\GAMA\GAMA\obj\Debug\GAMA.Properties.Resources.resources
+D:\Projects\Programming\Gama\GAMA\GAMA\obj\Debug\GAMA.csproj.GenerateResource.cache
+D:\Projects\Programming\Gama\GAMA\GAMA\obj\Debug\GAMA.csproj.CoreCompileInputs.cache
+D:\Projects\Programming\Gama\GAMA\GAMA\obj\Debug\GAMA.exe
+D:\Projects\Programming\Gama\GAMA\GAMA\obj\Debug\GAMA.pdb
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmMaster.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmBranch.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmGroup.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmMostanadat.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmShowAcademy.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmStandard.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditBranch.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.frmDetails.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditGroup.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmMaster.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditBranch.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditGroup.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmBranch.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.frmDetails.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmGroup.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmMostanadat.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmShowAcademy.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmStandard.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\PC1\Desktop\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.DLL
+C:\Users\PC1\Desktop\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.WinForms.DLL
+C:\Users\PC1\Desktop\GAMA\GAMA\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\PC1\Desktop\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.csprojResolveAssemblyReference.cache
+D:\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.Common.dll
+D:\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+D:\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+D:\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+D:\GAMA\GAMA\bin\Debug\Microsoft.SqlServer.Types.dll
+D:\GAMA\GAMA\obj\Debug\GAMA.csproj.CopyComplete
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditCourse.resources
+C:\Users\PC1\Desktop\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditCourse.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmStudent.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditSabtNam.resources
+D:\GAMA\GAMA\obj\Debug\GAMA.csproj.AssemblyReference.cache
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\bin\Debug\GAMA.exe
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\bin\Debug\GAMA.pdb
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.Common.dll
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\bin\Debug\Microsoft.SqlServer.Types.dll
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.csproj.AssemblyReference.cache
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmMaster.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmStudent.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditBranch.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmMain.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.Properties.Resources.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditCourse.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditGroup.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmBranch.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.frmDetails.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmGroup.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmMostanadat.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmShowAcademy.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmStandard.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.csproj.GenerateResource.cache
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.csproj.CoreCompileInputs.cache
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.csproj.CopyComplete
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.exe
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.pdb
+F:\project\GAMA\gama\GAMA\bin\Debug\GAMA.exe
+F:\project\GAMA\gama\GAMA\bin\Debug\GAMA.pdb
+F:\project\GAMA\gama\GAMA\bin\Debug\Microsoft.ReportViewer.Common.dll
+F:\project\GAMA\gama\GAMA\bin\Debug\Microsoft.ReportViewer.DataVisualization.dll
+F:\project\GAMA\gama\GAMA\bin\Debug\Microsoft.ReportViewer.ProcessingObjectModel.dll
+F:\project\GAMA\gama\GAMA\bin\Debug\Microsoft.ReportViewer.WinForms.dll
+F:\project\GAMA\gama\GAMA\bin\Debug\Microsoft.SqlServer.Types.dll
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.csprojAssemblyReference.cache
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmMaster.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.DayItem.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.HorizontalListNavigator.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmDatePicker.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmStudent.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditBranch.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmMain.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.Properties.Resources.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditCourse.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditGroup.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmBranch.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.frmDetails.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmGroup.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmMostanadat.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmShowAcademy.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmStandard.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.csproj.GenerateResource.cache
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.csproj.CoreCompileInputs.cache
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.csproj.CopyComplete
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.exe
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.pdb
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditStudent.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.DayItem.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.HorizontalListNavigator.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmDatePicker.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditStudent.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmAddEditSabtNamCourse.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources
+<<<<<<< HEAD
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.frmAlter.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditSabtNamCourse.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources
+C:\Users\P.Andishe\Desktop\Git Gama\GAMA\GAMA\obj\Debug\GAMA.frmAlter.resources
+=======
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.Clock.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmAddEditSabtNamCourse.resources
+F:\project\GAMA\gama\GAMA\obj\Debug\GAMA.FrmSabtNamCourse.resources
+>>>>>>> e9c354097eb02eb079ec6d8073e4ef163746a4f9

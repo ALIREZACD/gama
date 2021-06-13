@@ -23,9 +23,8 @@ namespace MyClass
         #region Fields
 
         Image _image;
-        VideoCaptureDevice _webcam;
-        FilterInfoCollection _webcams;
-        private string _error;
+        VideoCaptureDevice _device;
+        FilterInfoCollection _filters;
 
         #endregion
 
@@ -52,56 +51,26 @@ namespace MyClass
 
         private void FrmWebcamCapture_Load(object sender, EventArgs e)
         {
-            _webcams = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-            cmbCameras.DataSource = _webcams;
+            _filters = new FilterInfoCollection(FilterCategory.VideoInputDevice);
+            cmbCameras.DataSource = _filters;
             cmbCameras.DisplayMember = "Name";
             if (cmbCameras.Items.Count > 0)
-            cmbCameras.SelectedIndex = 0;
-        }
-
-        private void BtnStart_Click(object sender, EventArgs e)
-        {
-            if (cmbCameras.Items.Count == 0)
-            {
-                ShowError("دستگاهی برای ضبط ویدئو موجود نیست");
-                return;
-            }
-            if (_webcam == null || !_webcam.IsRunning)
-            {
-                picWebcam.Tag = "HadRun";
-                _webcam = new VideoCaptureDevice(((FilterInfo)cmbCameras.SelectedItem).MonikerString);
-                _webcam.NewFrame += Webcam_NewFrame;
-                _webcam.Start();
-            }
-            else
-            {
-                _webcam.Stop();
-            }
+                cmbCameras.SelectedIndex = 0;
         }
 
         private void Webcam_NewFrame(object sender, NewFrameEventArgs eventArgs)
         {
-            Bitmap img = eventArgs.Frame;
-            img.RotateFlip(RotateFlipType.Rotate180FlipX);
-            picWebcam.Image = new Bitmap(img);
-            img.Dispose();
-        }
-
-        private void Timer1_Tick(object sender, EventArgs e)
-        {
-            if (timer1.Interval != 20)
-                timer1.Interval = 20;
-            _error = _error.Substring(0, _error.Length - 1);
-            lblError.Text = _error;
-            if (_error.Length == 0)
-                timer1.Stop();
+            using (Bitmap bitmap = new Bitmap(eventArgs.Frame, picWebcam.ClientSize))
+                picWebcam.Image = new Bitmap(bitmap);
+            eventArgs.Frame.Dispose();
+            GC.Collect();
         }
 
         private void BtnSubmit_Click(object sender, EventArgs e)
         {
             if (picWebcam.Tag == null)
             {
-                ShowError("لطفا از وبکم عکس بگیرید");
+                FarsiMessageBox.Show("لطفا از وبکم عکس بگیرید");
                 return;
             }
             WebcamCapture = picWebcam.Image;
@@ -115,20 +84,27 @@ namespace MyClass
             this.Close();
         }
 
+        private void FrmWebcamCapture_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            _device?.Stop();
+        }
+
+        private void CmbCameras_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbCameras.Items.Count == 0)
+            {
+                FarsiMessageBox.Show("دستگاهی برای ضبط ویدئو موجود نیست");
+                return;
+            }
+            _device = new VideoCaptureDevice(_filters[cmbCameras.SelectedIndex].MonikerString);
+            _device.NewFrame += Webcam_NewFrame;
+            _device.Start();
+        }
+
         #endregion
 
 
         #region Functions
-
-        private void ShowError(string error)
-        {
-            _error = error;
-            lblError.Text = _error;
-            lblError.Width = lblError.PreferredWidth;
-            lblError.Left = this.ClientSize.Width - lblError.Width;
-            timer1.Interval = 3000;
-            timer1.Start();
-        }
 
         public static bool HasCamera() => new FilterInfoCollection(FilterCategory.VideoInputDevice).Count > 0;
 

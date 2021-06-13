@@ -28,12 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.lblError = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.picWebcam = new GAMA.PctrBSimple();
             this.cmbCameras = new GAMA.ComboSimple();
-            this.btnStart = new GAMA.BtnSimple();
             this.btnSubmit = new GAMA.BtnSimple();
             this.btnCancel = new GAMA.BtnSimple();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
@@ -41,23 +37,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.picWebcam)).BeginInit();
             this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblError
-            // 
-            this.lblError.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(535, 391);
-            this.lblError.Name = "lblError";
-            this.lblError.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblError.Size = new System.Drawing.Size(0, 19);
-            this.lblError.TabIndex = 7;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 2000;
-            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // picWebcam
             // 
@@ -69,7 +48,7 @@
             this.picWebcam.Name = "picWebcam";
             this.picWebcam.PareName = null;
             this.picWebcam.RowIndex = 0;
-            this.picWebcam.Size = new System.Drawing.Size(543, 324);
+            this.picWebcam.Size = new System.Drawing.Size(543, 349);
             this.picWebcam.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picWebcam.TabIndex = 8;
             this.picWebcam.TabStop = false;
@@ -88,32 +67,7 @@
             this.cmbCameras.RowIndex = 0;
             this.cmbCameras.Size = new System.Drawing.Size(168, 28);
             this.cmbCameras.TabIndex = 9;
-            // 
-            // btnStart
-            // 
-            this.btnStart.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.btnStart.BackgroundColor = System.Drawing.Color.White;
-            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStart.BorderColor = System.Drawing.Color.PaleVioletRed;
-            this.btnStart.BorderRadius = 10;
-            this.btnStart.BorderSize = 0;
-            this.btnStart.ColumnIndex = 0;
-            this.btnStart.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStart.FlatAppearance.BorderSize = 0;
-            this.btnStart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStart.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnStart.ForeColor = System.Drawing.Color.White;
-            this.btnStart.IsClicked = false;
-            this.btnStart.Location = new System.Drawing.Point(469, 3);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.PareName = null;
-            this.btnStart.RowIndex = 0;
-            this.btnStart.Size = new System.Drawing.Size(71, 32);
-            this.btnStart.TabIndex = 10;
-            this.btnStart.Text = "شروع";
-            this.btnStart.TextColor = System.Drawing.Color.White;
-            this.btnStart.UseVisualStyleBackColor = false;
-            this.btnStart.Click += new System.EventHandler(this.BtnStart_Click);
+            this.cmbCameras.SelectedIndexChanged += new System.EventHandler(this.CmbCameras_SelectedIndexChanged);
             // 
             // btnSubmit
             // 
@@ -130,7 +84,7 @@
             this.btnSubmit.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSubmit.ForeColor = System.Drawing.Color.White;
             this.btnSubmit.IsClicked = false;
-            this.btnSubmit.Location = new System.Drawing.Point(403, 3);
+            this.btnSubmit.Location = new System.Drawing.Point(480, 3);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.PareName = null;
             this.btnSubmit.RowIndex = 0;
@@ -156,7 +110,7 @@
             this.btnCancel.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.ForeColor = System.Drawing.Color.White;
             this.btnCancel.IsClicked = false;
-            this.btnCancel.Location = new System.Drawing.Point(329, 3);
+            this.btnCancel.Location = new System.Drawing.Point(406, 3);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.PareName = null;
             this.btnCancel.RowIndex = 0;
@@ -169,7 +123,6 @@
             // 
             // flowLayoutPanel1
             // 
-            this.flowLayoutPanel1.Controls.Add(this.btnStart);
             this.flowLayoutPanel1.Controls.Add(this.btnSubmit);
             this.flowLayoutPanel1.Controls.Add(this.btnCancel);
             this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -204,13 +157,12 @@
             this.Controls.Add(this.flowLayoutPanel1);
             this.Controls.Add(this.cmbCameras);
             this.Controls.Add(this.picWebcam);
-            this.Controls.Add(this.lblError);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmWebcamCapture";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "دوربین";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FrmWebcamCapture_FormClosed);
             this.Load += new System.EventHandler(this.FrmWebcamCapture_Load);
-            this.Controls.SetChildIndex(this.lblError, 0);
             this.Controls.SetChildIndex(this.picWebcam, 0);
             this.Controls.SetChildIndex(this.cmbCameras, 0);
             this.Controls.SetChildIndex(this.flowLayoutPanel1, 0);
@@ -223,11 +175,8 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label lblError;
-        private System.Windows.Forms.Timer timer1;
         private GAMA.PctrBSimple picWebcam;
         private GAMA.ComboSimple cmbCameras;
-        private GAMA.BtnSimple btnStart;
         private GAMA.BtnSimple btnSubmit;
         private GAMA.BtnSimple btnCancel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;

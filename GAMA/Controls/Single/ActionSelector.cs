@@ -30,6 +30,7 @@ namespace GAMA.Controls.Single
         private System.Timers.Timer _timer = new System.Timers.Timer(30);
         private bool _isExpanded = false;
         private TransitionStep _transtion;
+        // UI ↓↓
         private Color _itemBackColor = Color.Cyan;
         private Color _itemForeColor = Color.Black;
         private Size _itemSize = new Size(100, 60);
